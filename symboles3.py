@@ -1,7 +1,7 @@
 import subprocess
 import time
 
-scripts = ['numeros2.py', "numeros3.py", "mails2.py", "mails.py"]
+scripts = ['symboles.py', 'symboles2.py', 'symboles4.py']
 
 i = 0
 while i < len(scripts):

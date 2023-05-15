@@ -11,5 +11,5 @@ folium.TileLayer('https://tile.openstreetmap.org/cgi-bin/export?bbox=-180,-90,18
 folium.LayerControl().add_to(m)
 
 # Afficher la carte
-m.save('trafic routier en  temps reel.html')
+m.save('trafic_routier_en_temps_reel.html')
 
