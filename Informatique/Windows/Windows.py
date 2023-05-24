@@ -20,10 +20,10 @@ username = os.getlogin()
 print("L'utilisateur actuel est :", username)
 
 # Écrire dans un fichier texte
-with open("mon_fichier.txt", "w") as f:
+with open("../mon_fichier.txt", "w") as f:
     f.write("Ceci est un exemple de fichier texte écrit en Python.")
 
 # Lire le contenu du fichier texte
-with open("mon_fichier.txt", "r") as f:
+with open("../mon_fichier.txt", "r") as f:
     contenu = f.read()
     print("Contenu du fichier :", contenu)
