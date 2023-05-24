@@ -1,15 +1,32 @@
 import os
 
-# Chemin vers le répertoire contenant les commandes Linux
-path = "/bin"
+def afficher_commandes_linux():
+    commandes = [
+        "ls",
+        "pwd",
+        "cd",
+        "mkdir",
+        "rm",
+        "cp",
+        "mv",
+        "touch",
+        "cat",
+        "grep",
+        "chmod",
+        "chown",
+        "ps",
+        "top",
+        "kill",
+        "ifconfig",
+        "ip addr",
+        "ping",
+        "ssh",
+        "wget",
+        "curl"
+    ]
 
-# Liste des fichiers du répertoire /bin
-files = os.listdir(path)
+    for commande in commandes:
+        print(f"Commande Linux : {commande}")
+        os.system(f"man {commande}")
 
-# Compteur d'index
-i = 0
-
-# Boucle while pour parcourir tous les fichiers du répertoire /bin
-while i < len(files):
-    print(files[i])
-    i += 1
+afficher_commandes_linux()

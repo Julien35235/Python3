@@ -1,7 +1,7 @@
 import random
 
 urgences = {
-"Afghanistan": "119",
+    "Afghanistan": "119",
     "Afrique du Sud": "10111",
     "Albanie": "112",
     "Algérie": "14",

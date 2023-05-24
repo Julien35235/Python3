@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_c74961cedeabe98ea48c47deede34658 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_c74961cedeabe98ea48c47deede34658" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_c74961cedeabe98ea48c47deede34658 = L.map(
+                "map_c74961cedeabe98ea48c47deede34658",
+                {
+                    center: [47.0, 2.0],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 5,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_cd769d721916c9b43599ba6342f0d5d3 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_c74961cedeabe98ea48c47deede34658);
+        
+    
+            var tile_layer_8a3433fea5bb318712cd078b0b15921c = L.tileLayer(
+                "https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca target=\"_blank\" href=\"http://cartodb.com/attributions\"\u003eCartoDB\u003c/a\u003e, CartoDB \u003ca target=\"_blank\" href =\"http://cartodb.com/attributions\"\u003eattributions\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_c74961cedeabe98ea48c47deede34658);
+        
+    
+            var marker_95bbf71bab16f3823c8afbf6001ac2ca = L.marker(
+                [46.498333, -1.783333],
+                {}
+            ).addTo(map_c74961cedeabe98ea48c47deede34658);
+        
+    
+        var popup_3d19f4806d6763e3083a738f5b535618 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_128ca217d9015c2857e5897c174bfc47 = $(`<div id="html_128ca217d9015c2857e5897c174bfc47" style="width: 100.0%; height: 100.0%;">Les Sables-d'Olonne</div>`)[0];
+                popup_3d19f4806d6763e3083a738f5b535618.setContent(html_128ca217d9015c2857e5897c174bfc47);
+            
+        
+
+        marker_95bbf71bab16f3823c8afbf6001ac2ca.bindPopup(popup_3d19f4806d6763e3083a738f5b535618)
+        ;
+
+        
+    
+    
+            var marker_c133d2d76ff903e2b93de7c1ab2b332c = L.marker(
+                [-33.925278, 18.423889],
+                {}
+            ).addTo(map_c74961cedeabe98ea48c47deede34658);
+        
+    
+        var popup_41730351d66ce86dd5341da4c0191fa6 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_624ed1b6756bbe48f390475eefe61ef4 = $(`<div id="html_624ed1b6756bbe48f390475eefe61ef4" style="width: 100.0%; height: 100.0%;">Cape Town</div>`)[0];
+                popup_41730351d66ce86dd5341da4c0191fa6.setContent(html_624ed1b6756bbe48f390475eefe61ef4);
+            
+        
+
+        marker_c133d2d76ff903e2b93de7c1ab2b332c.bindPopup(popup_41730351d66ce86dd5341da4c0191fa6)
+        ;
+
+        
+    
+    
+            var marker_9aa14ac9a7d92cf76a730f9aac2e5d8d = L.marker(
+                [-33.865, 151.209444],
+                {}
+            ).addTo(map_c74961cedeabe98ea48c47deede34658);
+        
+    
+        var popup_d371692a700c418fba23c6bcac8bb3ee = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_ac4ce41f1ada01faf578f4bb496daca8 = $(`<div id="html_ac4ce41f1ada01faf578f4bb496daca8" style="width: 100.0%; height: 100.0%;">Sydney</div>`)[0];
+                popup_d371692a700c418fba23c6bcac8bb3ee.setContent(html_ac4ce41f1ada01faf578f4bb496daca8);
+            
+        
+
+        marker_9aa14ac9a7d92cf76a730f9aac2e5d8d.bindPopup(popup_d371692a700c418fba23c6bcac8bb3ee)
+        ;
+
+        
+    
+    
+            var marker_14734ca02a45e8b9aa9e4495c9aace36 = L.marker(
+                [-55.983333, -67.266667],
+                {}
+            ).addTo(map_c74961cedeabe98ea48c47deede34658);
+        
+    
+        var popup_57642f2530ca398afc0d06df160456d7 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_04a92e03b96ee0fef78be473ca219cc6 = $(`<div id="html_04a92e03b96ee0fef78be473ca219cc6" style="width: 100.0%; height: 100.0%;">Cape Horn</div>`)[0];
+                popup_57642f2530ca398afc0d06df160456d7.setContent(html_04a92e03b96ee0fef78be473ca219cc6);
+            
+        
+
+        marker_14734ca02a45e8b9aa9e4495c9aace36.bindPopup(popup_57642f2530ca398afc0d06df160456d7)
+        ;
+
+        
+    
+    
+            var marker_5fa6953148701bc54fcc5f45fc91b9ef = L.marker(
+                [-48.876944, -123.409444],
+                {}
+            ).addTo(map_c74961cedeabe98ea48c47deede34658);
+        
+    
+        var popup_1ce851dbec8dc887b430162c75300d75 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f1a291a785e1505fb869ec876589d264 = $(`<div id="html_f1a291a785e1505fb869ec876589d264" style="width: 100.0%; height: 100.0%;">Point Nemo</div>`)[0];
+                popup_1ce851dbec8dc887b430162c75300d75.setContent(html_f1a291a785e1505fb869ec876589d264);
+            
+        
+
+        marker_5fa6953148701bc54fcc5f45fc91b9ef.bindPopup(popup_1ce851dbec8dc887b430162c75300d75)
+        ;
+
+        
+    
+    
+            var marker_2fcf9a814f2275718162e14efd8c7d80 = L.marker(
+                [-34.371111, 115.139722],
+                {}
+            ).addTo(map_c74961cedeabe98ea48c47deede34658);
+        
+    
+        var popup_1a342440a1e362e63f485fba8ce78447 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_5115493a6edd475e64197db8dd4a83f1 = $(`<div id="html_5115493a6edd475e64197db8dd4a83f1" style="width: 100.0%; height: 100.0%;">Cape Leeuwin</div>`)[0];
+                popup_1a342440a1e362e63f485fba8ce78447.setContent(html_5115493a6edd475e64197db8dd4a83f1);
+            
+        
+
+        marker_2fcf9a814f2275718162e14efd8c7d80.bindPopup(popup_1a342440a1e362e63f485fba8ce78447)
+        ;
+
+        
+    
+    
+            var marker_4b59bccc700f603115dc29e3f944b331 = L.marker(
+                [46.498333, -1.783333],
+                {}
+            ).addTo(map_c74961cedeabe98ea48c47deede34658);
+        
+    
+        var popup_ef5df9b5c05a9007f86cfd4b0b7b9808 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_3a04722a66b14da0ec78ee5bb0d609ff = $(`<div id="html_3a04722a66b14da0ec78ee5bb0d609ff" style="width: 100.0%; height: 100.0%;">Les Sables-d'Olonne</div>`)[0];
+                popup_ef5df9b5c05a9007f86cfd4b0b7b9808.setContent(html_3a04722a66b14da0ec78ee5bb0d609ff);
+            
+        
+
+        marker_4b59bccc700f603115dc29e3f944b331.bindPopup(popup_ef5df9b5c05a9007f86cfd4b0b7b9808)
+        ;
+
+        
+    
+</script>
+</html>
