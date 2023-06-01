@@ -12,7 +12,7 @@ allume = False
 chaine = input("Entrez le numéro de la chaîne actuelle : ")
 volume = int(input("Entrez le niveau de volume actuel (entre 0 et 10) : "))
 
-# Boucle principale
+# Boucle principale à vrai
 while True:
     afficher_menu()
     choix = input("Choisissez une option : ")
