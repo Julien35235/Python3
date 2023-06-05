@@ -95,7 +95,7 @@ print()
 # Versions de Linux
 versions_linux = {
     "CentOS": ["7", "8", "9"],
-    "OpenSUSE": ["Leap 15", "Tumbleweed"],
+    "OPNsense": ["Leap 15", "Tumbleweed"],
     "Ubuntu": ["16.04 LTS", "18.04 LTS", "20.04 LTS"],
     "Debian": ["9", "10", "11"],
     "Fedora": ["32", "33", "34"],
