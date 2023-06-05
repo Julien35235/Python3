@@ -2,7 +2,7 @@ import time
 
 
 def fake_mise_a_jour(systeme):
-    print(f"Démarrage de la fausse mise à jour pour {systeme}...")
+    print(f"Démarrage de la mise à jour pour {systeme}...")
     time.sleep(2)
 
     print("Vérification des mises à jour disponibles...")
@@ -42,7 +42,7 @@ def effectuer_mise_a_jour(systeme):
 
 # Liste des systèmes d'exploitation
 systemes = ["Mac OS", "Windows XP", "Windows 7", "Windows 8", "Windows 10", "Windows 11",
-            "CentOS", "OpenSUSE", "Ubuntu", "Debian", "Fedora", "Raspberry Pi"]
+            "CentOS", "OPNsense", "Ubuntu", "Debian", "Fedora", "Raspberry Pi"]
 
 # Itération sur chaque système d'exploitation
 for systeme in systemes:

@@ -1,4 +1,4 @@
-print("Bienvenue au restaurant de Julien !")
+print("Bienvenue au restaurant de la Victoire !")
 print("Voici notre menu :")
 print("")
 
@@ -47,4 +47,4 @@ while True:
         print("- " + item)
     print("")
 
-print("Merci d'avoir commandé au restaurant XYZ ! Bon appétit !")
+print("Merci d'avoir commandé au restaurant de la Victoire ! Bon appétit !")
