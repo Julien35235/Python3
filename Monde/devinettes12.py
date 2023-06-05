@@ -1,0 +1,2 @@
+import DevinettesMethod
+DevinettesMethod.openfileDevinettesMethod()
