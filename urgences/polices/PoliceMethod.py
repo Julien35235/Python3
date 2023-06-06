@@ -1,0 +1,40 @@
+def openfilePoliceMethod():
+    forces_de_l_ordre = ["Police  nationale (PN) ",
+                         "Police municipale (PM) ",
+                         "Police nationale à Vélo ou à VTT",
+                         "Agent de surveillance de la voie publique (ASVP)",
+                         "La brigade équestre",
+                         "BAC (anti-criminalité) ",
+                         "Les brigades des stupéfiants (BS)",
+                         "Mission de lutte anti-drogue (MILAD)",
+                         "CRS (Les Compagnies Républicaines de la Sécurité) ",
+                         "Groupe d'intervention de la Police nationale (GIPN)",
+                         "BRAV-M (Brigade de répression des actions violente motorisée) ",
+                         "Officier de police judiciaire (OPJ) ",
+                         "Le service national de police scientifique (SNPS)",
+                         "Douanes",
+                         "Direction centrale de la Police aux frontières",
+                         "La direction centrale de la police aux frontières (DCPAF)",
+                         "La direction de la coopération internationale de Sécurité (DCIS)",
+                         "Raide (Recherche assistance intervention dissuasion)",
+                         "Brigade de recherche et d'intervention (BRI)",
+                         "Unité de coordination de la lutte antiterroriste (UCLAT)",
+                         "Direction générale de la Sécurité intérieure (DGSI)",
+                         "Direction interrégionale de la police judiciaire (DIPJ)",
+                         "Direction régionale de la police judiciaire de la préfecture de police de Paris (DRPJ)",
+                         "La direction centrale des compagnies républicaines de sécurité (DCCRS)",
+                         "Direction centrale du recrutement et de la formation de la Police nationale (DCRFPN)",
+                         "Service régional de police judiciaire",
+                         "Service d'information et de communication de la Police nationale (SCIOP)",
+                         "Le service de la protection (SDLP)",
+                         "Le service statistique ministériel de la sécurité intérieure (SSMSI)",
+                         "Gendarmerie nationale (GN)",
+                         "PSIG (Peloton de surveillance et d'intervention de la Gendarmerie)",
+                         "GIGN (Groupe d'intervention de la gendarmerie nationale)",
+                         "L'armée de terre", "La marine nationale",
+                         "L'armée de l'air et de l'espace"]
+    i = 0
+    while i < len(forces_de_l_ordre):
+        print(forces_de_l_ordre[i])
+        i += 1
+
