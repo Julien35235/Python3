@@ -1,0 +1,2 @@
+import CalculatriceMethod
+CalculatriceMethod.openfileCalculatriceMethod()
