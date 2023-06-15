@@ -1,0 +1,2 @@
+import MailsMethod
+MailsMethod.openfilleMailsMethod()

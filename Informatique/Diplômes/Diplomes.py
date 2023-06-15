@@ -1,0 +1,2 @@
+import DiplomesMethod
+DiplomesMethod.openfilleDiplomesMethod()

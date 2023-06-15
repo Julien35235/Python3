@@ -1,0 +1,2 @@
+import NavigationsMethod
+NavigationsMethod.openfilleNavigationsMethod()
