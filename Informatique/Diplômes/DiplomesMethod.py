@@ -1,76 +1,173 @@
 def openfilleDiplomesMethod():
-    def afficher_menu():
-        print("Menu principal :")
-        print("1. CFG")
-        print("2. DNB")
-        print("3. BAC")
-        print("4. CAP")
-        print("5. BTS")
-        print("6. DUT")
-        print("7. BUT")
-        print("8. Quitter")
+    def afficher_menu_principal():
+        print("=== MENU PRINCIPAL ===")
+        print("1. ASSR")
+        print("2. ETG")
+        print("3. PSC")
+        print("4. CFG")
+        print("5. DNB")
+        print("6. BAC")
+        print("7. CAP")
+        print("0. Quitter")
 
-    def afficher_niveaux_bac():
-        print("Niveaux du BAC :")
+    def afficher_menu_assr():
+        print("=== MENU ASSR ===")
+        print("1. ASSR 1 (Attestation scolaire de sécurité routière de premier niveau)")
+        print("2. ASSR 2 (Attestation scolaire de sécurité routière du deuxième niveau)")
+        print("0. Retour")
+
+    def afficher_menu_etg():
+        print("=== MENU ETG ===")
+        print("1. ETG (Épreuve Théorique Générale du permis de conduire)")
+        print("0. Retour")
+
+    def afficher_menu_psc():
+        print("=== MENU PSC ===")
+        print("1. PSC1 (Prévention et secours civiques de niveau 1)")
+        print("2. PSC2 (Les Premiers Secours Civiques de niveau 2)")
+        print("0. Retour")
+
+    def afficher_menu_cfg():
+        print("=== MENU CFG ===")
+        print("1. CFG (Certificat de Formation Générale)")
+        print("0. Retour")
+
+    def afficher_menu_dnb():
+        print("=== MENU DNB ===")
+        print("1. DNB (Diplôme National du Brevet)")
+        print("0. Retour")
+
+    def afficher_menu_bac():
+        print("=== MENU NIVEAUX DU BAC ===")
         print("1. BAC L")
         print("2. BAC ES")
         print("3. BAC S")
         print("4. BAC STMG")
-        print("5. Retour")
+        print("0. Retour")
 
-    def diplome_cfg():
-        print("Le Certificat de Formation Générale (CFG).")
+    def afficher_menu_cap():
+        print("=== MENU CAP ===")
+        print("1. CAP (Certificat d'Aptitude Professionnelle)")
+        print("0. Retour")
 
-    def diplome_dnb():
-        print("Le Diplôme National du Brevet (DNB) est un diplôme de fin d'études secondaires en France.")
+    # Fonction principale pour exécuter le script
+    def main():
+        while True:
+            afficher_menu_principal()
+            choix_principal = input("Choisissez une option : ")
 
-    def diplome_bac():
-        choix_bac = 0
-        while choix_bac != 5:
-            afficher_niveaux_bac()
-            choix_bac = int(input("Choisissez un niveau du BAC (1-5) : "))
-            if choix_bac == 1:
-                print("BAC L : Bac Littéraire")
-            elif choix_bac == 2:
-                print("BAC ES : Bac Économique et Social")
-            elif choix_bac == 3:
-                print("BAC S : Bac Scientifique")
-            elif choix_bac == 4:
-                print("BAC STMG : Bac Sciences et Technologies du Management et de la Gestion")
-            elif choix_bac == 5:
-                print("Retour au menu principal")
+            if choix_principal == "1":
+                while True:
+                    afficher_menu_assr()
+                    choix_assr = input("Choisissez une option : ")
 
-    def diplome_cap():
-        print("Le Certificat d'Aptitude Professionnelle (CAP) est un diplôme d'études professionnelles en France.")
+                    if choix_assr == "1":
+                        print("Vous avez choisi l'ASSR 1.")
+                        # Faites ce que vous voulez avec l'ASSR 1
+                    elif choix_assr == "2":
+                        print("Vous avez choisi l'ASSR 2.")
+                        # Faites ce que vous voulez avec l'ASSR 2
+                    elif choix_assr == "0":
+                        break
+                    else:
+                        print("Option invalide. Veuillez choisir une option valide.")
 
-    def diplome_bts():
-        print("Le Brevet de Technicien Supérieur (BTS) est un diplôme national de l'enseignement supérieur en France.")
+            elif choix_principal == "2":
+                while True:
+                    afficher_menu_etg()
+                    choix_etg = input("Choisissez une option : ")
 
-    def diplome_dut():
-        print("Le Diplôme Universitaire de Technologie (DUT) est un diplôme de niveau 3 dans le système français.")
+                    if choix_etg == "1":
+                        print("Vous avez choisi l'ETG.")
+                        # Faites ce que vous voulez avec l'ETG
+                    elif choix_etg == "0":
+                        break
+                    else:
+                        print("Option invalide. Veuillez choisir une option valide.")
 
-    def diplome_but():
-        print("Le Bachelor Universitaire de Technologie (BUT) est un diplôme de niveau 2 dans le système français.")
+            elif choix_principal == "3":
+                while True:
+                    afficher_menu_psc()
+                    choix_psc = input("Choisissez une option : ")
 
-    choix = 0
-    while choix != 8:
-        afficher_menu()
-        choix = int(input("Choisissez une option (1-8) : "))
-        if choix == 1:
-            diplome_cfg()
-        elif choix == 2:
-            diplome_dnb()
-        elif choix == 3:
-            diplome_bac()
-        elif choix == 4:
-            diplome_cap()
-        elif choix == 5:
-            diplome_bts()
-        elif choix == 6:
-            diplome_dut()
-        elif choix == 7:
-            diplome_but()
-        elif choix == 8:
-            print("Merci d'avoir utilisé le programme !")
-        else:
-            print("Option invalide. Veuillez sélectionner une option valide (1-8).")
+                    if choix_psc == "1":
+                        print("Vous avez choisi le PSC1.")
+                        # Faites ce que vous voulez avec le PSC1
+                    elif choix_psc == "2":
+                        print("Vous avez choisi le PSC2.")
+                        # Faites ce que vous voulez avec le PSC2
+                    elif choix_psc == "0":
+                        break
+                    else:
+                        print("Option invalide. Veuillez choisir une option valide.")
+
+            elif choix_principal == "4":
+                while True:
+                    afficher_menu_cfg()
+                    choix_cfg = input("Choisissez une option : ")
+
+                    if choix_cfg == "1":
+                        print("Vous avez choisi le CFG.")
+                        # Faites ce que vous voulez avec le CFG
+                    elif choix_cfg == "0":
+                        break
+                    else:
+                        print("Option invalide. Veuillez choisir une option valide.")
+
+            elif choix_principal == "5":
+                while True:
+                    afficher_menu_dnb()
+                    choix_dnb = input("Choisissez une option : ")
+
+                    if choix_dnb == "1":
+                        print("Vous avez choisi le DNB.")
+                        # Faites ce que vous voulez avec le DNB
+                    elif choix_dnb == "0":
+                        break
+                    else:
+                        print("Option invalide. Veuillez choisir une option valide.")
+
+            elif choix_principal == "6":
+                while True:
+                    afficher_menu_bac()
+                    choix_bac = input("Choisissez une option : ")
+
+                    if choix_bac == "1":
+                        print("Vous avez choisi le BAC L.")
+                        # Faites ce que vous voulez avec le BAC L
+                    elif choix_bac == "2":
+                        print("Vous avez choisi le BAC ES.")
+                        # Faites ce que vous voulez avec le BAC ES
+                    elif choix_bac == "3":
+                        print("Vous avez choisi le BAC S.")
+                        # Faites ce que vous voulez avec le BAC S
+                    elif choix_bac == "4":
+                        print("Vous avez choisi le BAC STMG.")
+                        # Faites ce que vous voulez avec le BAC STMG
+                    elif choix_bac == "0":
+                        break
+                    else:
+                        print("Option invalide. Veuillez choisir une option valide.")
+
+            elif choix_principal == "7":
+                while True:
+                    afficher_menu_cap()
+                    choix_cap = input("Choisissez une option : ")
+
+                    if choix_cap == "1":
+                        print("Vous avez choisi le CAP.")
+                        # Faites ce que vous voulez avec le CAP
+                    elif choix_cap == "0":
+                        break
+                    else:
+                        print("Option invalide. Veuillez choisir une option valide.")
+
+            elif choix_principal == "0":
+                print("Au revoir !")
+                break
+
+            else:
+                print("Option invalide. Veuillez choisir une option valide.")
+
+    # Appel de la fonction principale pour exécuter le script
+    main()
