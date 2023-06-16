@@ -1,64 +1,72 @@
 def openfilleMethod():
-    import datetime
+    import calendar
 
-    # Liste des jours fériés
-    jours_feries = {
-        datetime.date(datetime.date.today().year, 1, 1): "Jour de l'an",
-        datetime.date(datetime.date.today().year, 5, 1): "Fête du Travail",
-        datetime.date(datetime.date.today().year, 7, 14): "Fête nationale",
-        datetime.date(datetime.date.today().year, 12, 25): "Noël"
-    }
+    # Fonction pour obtenir les jours fériés
+    def get_holidays(year):
+        # Ajoutez ici la logique pour récupérer les jours fériés pour l'année spécifiée
+        # Par exemple, vous pouvez utiliser une API ou une base de données contenant les jours fériés
 
-    # Liste des fêtes nationales
-    fetes_nationales = {
-        datetime.date(datetime.date.today().year, 2, 14): "Saint-Valentin",
-        datetime.date(datetime.date.today().year, 3, 17): "Saint-Patrick",
-        datetime.date(datetime.date.today().year, 7, 4): "Fête de l'Indépendance",
-        datetime.date(datetime.date.today().year, 10, 31): "Halloween"
-    }
+        # Pour l'exemple, je vais simplement retourner une liste vide
+        return {}
 
-    # Fonction pour afficher le calendrier avec les jours fériés et les fêtes nationales
-    def afficher_calendrier(year):
-        print("                 ", year)
-        print(" Janvier ")
-        print("Lun Mar Mer Jeu Ven Sam Dim")
-        first_day = datetime.date(year, 1, 1)
-        last_day = datetime.date(year, 2, 1) - datetime.timedelta(days=1)
-        start_day = first_day.weekday()
-        print(" " * (3 * start_day), end="")
-        for day in range(1, last_day.day + 1):
-            date = datetime.date(year, 1, day)
-            if date.weekday() == 0 and day != 1:
-                print()
-            if date in jours_feries:
-                print("[" + str(day).rjust(2) + "]", end=" ")
-            elif date in fetes_nationales:
-                print("(" + str(day).rjust(2) + ")", end=" ")
-            else:
-                print(str(day).rjust(2), end=" ")
-        print("\n")
+    # Fonction pour obtenir les vacances scolaires
+    def get_vacations(zone, year):
+        # Ajoutez ici la logique pour récupérer les vacances scolaires pour la zone et l'année spécifiées
+        # Par exemple, vous pouvez utiliser une API ou une base de données contenant les dates des vacances
 
-        for month in range(2, 13):
-            month_name = datetime.date(year, month, 1).strftime("%B")
-            print(" " * 10, month_name)
-            print("Lun Mar Mer Jeu Ven Sam Dim")
-            first_day = datetime.date(year, month, 1)
-            last_day = datetime.date(year, month + 1, 1) - datetime.timedelta(days=1)
-            start_day = first_day.weekday()
-            print(" " * (3 * start_day), end="")
-            for day in range(1, last_day.day + 1):
-                date = datetime.date(year, month, day)
-                if date.weekday() == 0 and day != 1:
-                    print()
-                if date in jours_feries:
-                    print("[" + str(day).rjust(2) + "]", end=" ")
-                elif date in fetes_nationales:
-                    print("(" + str(day).rjust(2) + ")", end=" ")
+        # Pour l'exemple, je vais simplement retourner une liste vide
+        return []
+
+    # Fonction pour générer le calendrier d'une année donnée
+    def generate_calendar(year, zone):
+        # Ajoutez ici la logique pour générer le calendrier de l'année spécifiée
+        # Utilisez la bibliothèque calendar pour obtenir les jours et les mois
+
+        holidays = get_holidays(year)
+        vacations = get_vacations(zone, year)
+
+        # Affichez le calendrier, les jours fériés et les vacances scolaires ici
+
+    # Fonction pour afficher le menu principal
+    def main_menu():
+        while True:
+            print("Calendriers Français")
+            print("--------------------")
+            print("1. Afficher les Zones")
+            print("2. Quitter")
+
+            choice = input("Veuillez sélectionner une option (1-2) : ")
+
+            if choice == "1":
+                year = int(input("Veuillez entrer une année : "))
+
+                print("\nZones :")
+                print("-------")
+                print("1. Zone A : Besançon, Bordeaux, Clermont-Ferrand, Dijon, Grenoble, Limoges, Lyon, Poitiers.")
+                print(
+                    "2. Zone B : Aix-Marseille, Amiens, Caen, Lille, Nancy-Metz, Nantes, Nice, Orléans-Tours, Reims, Rennes, Rouen, Strasbourg.")
+                print("3. Zone C : Créteil, Montpellier, Paris, Toulouse, Versailles.")
+
+                zone_choice = input("Veuillez sélectionner une zone (1-3) : ")
+
+                if zone_choice == "1":
+                    zone = "A"
+                elif zone_choice == "2":
+                    zone = "B"
+                elif zone_choice == "3":
+                    zone = "C"
                 else:
-                    print(str(day).rjust(2), end=" ")
-            print("\n")
+                    print("Choix invalide.")
+                    continue
 
-    # Affichage du calendrier pour chaque année
-    for year in range(1300, 3001):
-        afficher_calendrier(year)
-        print("-" * 50)
+                generate_calendar(year, zone)
+
+            elif choice == "2":
+                print("Au revoir !")
+                break
+
+            else:
+                print("Choix invalide. Veuillez sélectionner une option valide.")
+
+    # Appel du menu principal
+    main_menu()
