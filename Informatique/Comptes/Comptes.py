@@ -1,2 +1,2 @@
 import ComptesMethod
-ComptesMethod.openfilleComptesMethod()c
+ComptesMethod.openfilleComptesMethod()
