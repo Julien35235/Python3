@@ -1,0 +1,2 @@
+import GrafanaMethod
+GrafanaMethod.openfilleGrafanaMethod()
