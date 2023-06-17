@@ -100,7 +100,7 @@ def openfilleConfigurationsMethod():
         # Configuration complète pour Raspberry Pi
         clear_screen()
         print("Configuration complète pour Raspberry Pi")
-        webbrowser.open("https://www.raspberrypi.com/software")
+        webbrowser.open("https://www.raspberrypi.com/software/raspberry-pi-desktop")
 
     def configure_arduino():
         # Configuration complète pour Arduino
