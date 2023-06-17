@@ -28,7 +28,7 @@ def openfilleConfigurationsMethod():
         # Configuration complète pour Windows Server
         clear_screen()
         print("Configuration complète pour Windows Server")
-        webbrowser.open("https://lecrabeinfo.net/telecharger/windows-server-2019-x64")
+        webbrowser.open("https://lecrabeinfo.net/telecharger/windows-server-2022-x64")
 
     def configure_windows_10():
         # Configuration complète pour Windows 10
