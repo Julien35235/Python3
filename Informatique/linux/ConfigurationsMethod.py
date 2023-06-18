@@ -42,6 +42,25 @@ def openfilleConfigurationsMethod():
         print("Configuration complète pour Windows 11")
         webbrowser.open("https://www.microsoft.com/software-download/windows11")
 
+    def configure_proxmox():
+        # Configuration complète pour Proxmox
+        clear_screen()
+        print("Configuration complète pour Proxmox")
+        webbrowser.open("https://www.proxmox.com/en/downloads")
+
+    def configure_vmware():
+        # Configuration complète pour VMware
+        clear_screen()
+        print("Configuration complète pour VMware")
+        webbrowser.open(
+            "https://customerconnect.vmware.com/fr/downloads/info/slug/datacenter_cloud_infrastructure/vmware_vsphere/8_0")
+
+    def configure_virtualbox():
+        # Configuration complète pour Virtualbox
+        clear_screen()
+        print("Configuration complète pour Virtualbox")
+        webbrowser.open("https://www.virtualbox.org/wiki/Downloads")
+
     def configure_mac_osx():
         # Configuration complète pour Mac OSX
         clear_screen()
@@ -61,7 +80,7 @@ def openfilleConfigurationsMethod():
         webbrowser.open("https://www.centos.org/download")
 
     def configure_kubernetes():
-        # Configuration complète pour CentOS
+        # Configuration complète pour Kubernetes
         clear_screen()
         print("Configuration complète pour Kubernetes")
         webbrowser.open("https://kubernetes.io/fr/docs/setup/")
@@ -94,7 +113,7 @@ def openfilleConfigurationsMethod():
         # Configuration complète pour Fedora
         clear_screen()
         print("Configuration complète pour Fedora")
-        webbrowser.open("https://www.debian.org/distrib/index.fr.html")
+        webbrowser.open("https://getfedora.org/fr/workstation/download/")
 
     def configure_raspberry_pi():
         # Configuration complète pour Raspberry Pi
@@ -124,18 +143,21 @@ def openfilleConfigurationsMethod():
         print("4. Windows Server")
         print("5. Windows 10")
         print("6. Windows 11")
-        print("7. Mac OSX")
-        print("8. iOS")
-        print("9. CentOS")
-        print("10. Kubernetes")
-        print("11. OPNsense")
-        print("12. iPXE")
-        print("13. Ubuntu")
-        print("14. Debian")
-        print("15. Fedora")
-        print("16. Raspberry Pi")
-        print("17. Arduino")
-        print("18. Kali")
+        print("7. Proxmox")
+        print("8. VMware")
+        print("9. Virtualbox")
+        print("10. Mac OSX")
+        print("11. iOS")
+        print("12. CentOS")
+        print("13. Kubernetes")
+        print("14. OPNsense")
+        print("15. iPXE")
+        print("16. Ubuntu")
+        print("17. Debian")
+        print("18. Fedora")
+        print("19. Raspberry Pi")
+        print("20. Arduino")
+        print("21. Kali")
         print("0. Quitter")
 
         choice = input("Choisissez une option : ")
@@ -153,28 +175,34 @@ def openfilleConfigurationsMethod():
         elif choice == "6":
             configure_windows_11()
         elif choice == "7":
-            configure_mac_osx()
+            configure_proxmox()
         elif choice == "8":
-            configure_ios()
+            configure_vmware()
         elif choice == "9":
-            configure_centos()
+            configure_virtualbox()
         elif choice == "10":
-            configure_kubernetes()
+            configure_mac_osx()
         elif choice == "11":
-            configure_opnsense()
+            configure_ios()
         elif choice == "12":
-            configure_ipxe()
+            configure_centos()
         elif choice == "13":
-            configure_ubuntu()
+            configure_kubernetes()
         elif choice == "14":
-            configure_debian()
+            configure_opnsense()
         elif choice == "15":
-            configure_fedora()
+            configure_ipxe()
         elif choice == "16":
-            configure_raspberry_pi()
+            configure_ubuntu()
         elif choice == "17":
-            configure_arduino()
+            configure_debian()
         elif choice == "18":
+            configure_fedora()
+        elif choice == "19":
+            configure_raspberry_pi()
+        elif choice == "20":
+            configure_arduino()
+        elif choice == "21":
             configure_kali()
         elif choice == "0":
             clear_screen()
