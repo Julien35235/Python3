@@ -24,38 +24,41 @@ def openfilleLinuxMethod():
         print("19. mv")
         print("20. cat")
         print("21. cd")
-        print("22. chmod")
-        print("23. vi")
-        print("24. nano")
-        print("25. host")
-        print("26. dmesg | grep -i network")
-        print("27. lsmod")
-        print("28. lsmod | grep")
-        print("29. ls")
-        print("30. ls -all")
-        print("31. ls -a")
-        print("32. ls -lash")
-        print("33. chmod")
-        print("34. grep")
-        print("35. useradd")
-        print("36. man")
-        print("37. mount")
-        print("38. sudo rm")
-        print("39. rm -R")
-        print("40. git config --global")
-        print("41. git clone")
-        print("42. git init")
-        print("43. git status")
-        print("44. git restore")
-        print("45. git stage")
-        print("46. git add --all")
-        print("47. git commit -m \"\"")
-        print("48. git pull")
-        print("49. git push (git p)")
-        print("50. git remote -v")
-        print("51. git branch")
-        print("52. git reset")
-        print("53. git diff")
+        print("22. cp")
+        print("23. chmod")
+        print("24. vi")
+        print("25. nano")
+        print("26. echo")
+        print("27. host")
+        print("28. dmesg | grep -i network")
+        print("29. lsmod")
+        print("30. lsmod | grep")
+        print("31. ls")
+        print("32. ls -all")
+        print("33. ls -a")
+        print("34. ls -lash")
+        print("35. ls -lh")
+        print("36. chmod")
+        print("37. grep")
+        print("38. useradd -c")
+        print("39. man")
+        print("40. mount")
+        print("41. sudo rm")
+        print("42. rm -R")
+        print("43. git config --global user.email")
+        print("44. git clone")
+        print("45. git init")
+        print("46. git status")
+        print("47. git restore")
+        print("48. git stage")
+        print("49. git add --all")
+        print("50. git commit -m \"\"")
+        print("51. git pull")
+        print("52. git push (git p)")
+        print("53. git remote -v")
+        print("54. git branch")
+        print("55. git reset")
+        print("56. git diff")
         print("0. Quitter")
 
     def run_command(command):
@@ -122,69 +125,75 @@ def openfilleLinuxMethod():
         elif choice == "21":
             run_command("cd")
         elif choice == "22":
-            run_command("chmod")
+            run_command("cp")
         elif choice == "23":
-            run_command("vi")
-        elif choice == "24":
-            run_command("nano")
-        elif choice == "25":
-            run_command("host")
-        elif choice == "26":
-            run_command("dmesg | grep -i network")
-        elif choice == "27":
-            run_command("lsmod")
-        elif choice == "28":
-            run_command("lsmod | grep")
-        elif choice == "29":
-            run_command("ls")
-        elif choice == "30":
-            run_command("ls -all")
-        elif choice == "31":
-            run_command("ls -a")
-        elif choice == "32":
-            run_command("ls -lash")
-        elif choice == "33":
             run_command("chmod")
+        elif choice == "24":
+            run_command("vi")
+        elif choice == "25":
+            run_command("nano")
+        elif choice == "26":
+            run_command("echo")
+        elif choice == "27":
+            run_command("host")
+        elif choice == "28":
+            run_command("dmesg | grep -i network")
+        elif choice == "29":
+            run_command("lsmod")
+        elif choice == "30":
+            run_command("lsmod | grep")
+        elif choice == "31":
+            run_command("ls")
+        elif choice == "32":
+            run_command("ls -all")
+        elif choice == "33":
+            run_command("ls -a")
         elif choice == "34":
-            run_command("grep")
+            run_command("ls -lash")
         elif choice == "35":
-            run_command("useradd")
+            run_command("ls -lh")
         elif choice == "36":
-            run_command("man")
+            run_command("chmod")
         elif choice == "37":
-            run_command("mount")
+            run_command("grep")
         elif choice == "38":
-            run_command("sudo rm")
+            run_command("useradd -c")
         elif choice == "39":
-            run_command("rm -R")
+            run_command("man")
         elif choice == "40":
-            run_command("git config --global user.email")
+            run_command("mount")
         elif choice == "41":
-            run_command("git clone")
+            run_command("sudo rm")
         elif choice == "42":
-            run_command("git init")
+            run_command("rm -R")
         elif choice == "43":
-            run_command("git status")
+            run_command("git config --global user.email")
         elif choice == "44":
-            run_command("git restore")
+            run_command("git clone")
         elif choice == "45":
-            run_command("git stage")
+            run_command("git init")
         elif choice == "46":
-            run_command("git add --all")
+            run_command("git status")
         elif choice == "47":
+            run_command("git restore")
+        elif choice == "48":
+            run_command("git stage")
+        elif choice == "49":
+            run_command("git add --all")
+        elif choice == "50":
             commit_message = input("Entrez le message du commit : ")
             run_command(f"git commit -m \"{commit_message}\"")
-        elif choice == "48":
-            run_command("git pull")
-        elif choice == "49":
-            run_command("git push")
-        elif choice == "50":
-            run_command("git remote -v")
         elif choice == "51":
-            run_command("git branch")
+            run_command("git pull")
         elif choice == "52":
-            run_command("git reset")
+            run_command("git push")
         elif choice == "53":
+            run_command("git remote -v")
+        elif choice == "54":
+            run_command("git branch")
+        elif choice == "55":
+            run_command("git reset")
+        elif choice == "56":
             run_command("git diff")
         else:
             print("Commande invalide. Veuillez réessayer.")
