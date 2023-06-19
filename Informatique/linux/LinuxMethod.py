@@ -42,7 +42,7 @@ def openfilleLinuxMethod():
         print("37. mount")
         print("38. sudo rm")
         print("39. rm -R")
-        print("40. git config --global user.email sam@google.com")
+        print("40. git config --global")
         print("41. git clone")
         print("42. git init")
         print("43. git status")
@@ -158,7 +158,7 @@ def openfilleLinuxMethod():
         elif choice == "39":
             run_command("rm -R")
         elif choice == "40":
-            run_command("git config --global user.email sam@google.com")
+            run_command("git config --global user.email")
         elif choice == "41":
             run_command("git clone")
         elif choice == "42":
