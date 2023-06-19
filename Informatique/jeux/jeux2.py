@@ -1,91 +1,56 @@
-import pygame
-import random
+import webbrowser
 
-# Initialisation de Pygame
-pygame.init()
 
-# Dimensions de la fenêtre de jeu
-largeur = 800
-hauteur = 600
+def clear_console():
+    import os
+    os.system('cls' if os.name == 'nt' else 'clear')
 
-# Couleurs
-blanc = (255, 255, 255)
 
-# Création de la fenêtre de jeu
-fenetre = pygame.display.set_mode((largeur, hauteur))
-pygame.display.set_caption("Mario Kart Wii - Course")
+def show_main_menu():
+    clear_console()
+    print("=== MENU PRINCIPAL ===")
+    print("1. Démarrer Paris Driver Simulator")
+    print("2. Démarrer Paris Métro Simulator")
+    print("3. Démarrer New York Subway Driver")
+    print("4. Quitter")
 
-# Chargement des images des personnages et des obstacles
-personnage_image = pygame.image.load("1777137928_small")
-obstacle_image = pygame.image.load("obstacle.png")
 
-# Position initiale du personnage
-personnage_x = largeur // 2 - 16
-personnage_y = hauteur - 64
+def start_paris_driver_simulator():
+    clear_console()
+    print("=== Paris Driver Simulator ===")
+    webbrowser.open("https://pmdapp.fr/start")
 
-# Variables pour les obstacles
-obstacle_x = random.randint(0, largeur - 32)
-obstacle_y = -64
-obstacle_vitesse = 5
 
-# Variables pour le menu
-font_menu = pygame.font.Font(None, 36)
-choix_menu = 0
+def start_paris_metro_simulator():
+    clear_console()
+    print("=== Paris Métro Simulator ===")
+    webbrowser.open("https://parismetrosimulator.appspot.com")
 
-# Fonction pour afficher le menu principal
-def afficher_menu():
-    titre_texte = font_menu.render("Mario Kart Wii - Menu Principal", True, blanc)
-    jouer_texte = font_menu.render("1. Jouer", True, blanc)
-    quitter_texte = font_menu.render("2. Quitter", True, blanc)
 
-    fenetre.fill(blanc)
-    fenetre.blit(titre_texte, (largeur // 2 - titre_texte.get_width() // 2, 200))
-    fenetre.blit(jouer_texte, (largeur // 2 - jouer_texte.get_width() // 2, 300))
-    fenetre.blit(quitter_texte, (largeur // 2 - quitter_texte.get_width() // 2, 350))
-    pygame.display.flip()
+def start_new_york_subway_driver():
+    clear_console()
+    print("=== New York Subway Driver ===")
+    webbrowser.open("https://new-york-subway-driver.appspot.com")
 
-# Fonction pour démarrer le jeu
-def demarrer_jeu():
-    running = True
-    while running:
-        # Gestion des événements
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                running = False
 
-        # Déplacement du personnage
-        touches = pygame.key.get_pressed()
-        if touches[pygame.K_LEFT]:
-            personnage_x -= 5
-        if touches[pygame.K_RIGHT]:
-            personnage_x += 5
+def main():
+    while True:
+        show_main_menu()
+        choice = input("Choisissez une option : ")
 
-        # Déplacement de l'obstacle
-        obstacle_y += obstacle_vitesse
+        if choice == "1":
+            start_paris_driver_simulator()
+        elif choice == "2":
+            start_paris_metro_simulator()
+        elif choice == "3":
+            start_new_york_subway_driver()
+        elif choice == "4":
+            clear_console()
+            print("Au revoir !")
+            break
+        else:
+            input("Option invalide. Appuyez sur Entrée pour réessayer.")
 
-        # Vérification des collisions
-        if obstacle_y > hauteur:
-            obstacle_x = random.randint(0, largeur - 32)
-            obstacle_y = -64
 
-        if personnage_x < obstacle_x + 32 and personnage_x + 32 > obstacle_x and personnage_y < obstacle_y + 32 and personnage_y + 32 > obstacle_y:
-            # Collision détectée, jeu terminé
-            running = False
-
-        # Dessin de la fenêtre de jeu
-        fenetre.fill(blanc)
-        fenetre.blit(personnage_image, (personnage_x, personnage_y))
-        fenetre.blit(obstacle_image, (obstacle_x, obstacle_y))
-        pygame.display.flip()
-
-    # Retour au menu principal après la fin du jeu
-    afficher_menu()
-
-# Boucle principale
-for event in pygame.event.get():
-    if event.type == pygame.KEYDOWN:
-        if event.key == pygame.K_1:
-            en_menu = False
-            demarrer_jeu()
-        elif event.key == pygame.K_2:
-            en_menu = False
+if __name__ == "__main__":
+    main()
