@@ -1,53 +1,129 @@
 def openfilleMeteoMethod():
-    # Consultation API météo avec openweathermap
+    import random
 
-    import requests
-    import json
-    import datetime
+    cities = [
+        "New-York", "Boston", "Dinard", "Rennes", "Paris", "Le Mans", "Bordeaux", "Caen", "Rouen", "Amiens",
+        "Compiègne", "Reims", "Cabourg", "Bar-le-Duc", "Nancy", "Metz", "Troyes", "Lyon", "Grenoble", "Valence",
+        "Avignon", "Lunel", "Nîmes", "Montpellier", "Carcassonne", "Toulouse", "Montauban", "Angoulême", "Nantes",
+        "Niort", "Poitiers", "Bourges", "Blois", "Créteil", "Limoges", "Brive-la-Gaillarde", "Cahors",
+        "Clermont-Ferrand","Lège-Cap-Ferret", "Arès", "Andernos-les-Bains", "Biganos", "Arcachon", "Cap Ferret", "Laval", "Fougères",
+        "Romagné", "Milan", "Venise", "Turin", "Rome", "Palerme", "Catane", "Héraklion", "La Canée", "Le Caire", "Jérusalem",
+        "Amman", "Al-'Ula", "Al-Madinah", "Riyad", "Manama", "Doha", "Dubaï", "Mascate", "Colombo", "Bangalore",
+        "Abidjan", "Accra", "Libreville", "Conakry", "Dakar", "Casablanca", "Madrid", "Barcelone", "Bilbao", "Palma",
+        "Lisbonne", "Vigo", "Porto", "Séville", "Cadix", "Gibraltar", "Málaga", "Tunis", "Tripoli", "Funchal",
+        "Las Palmas de Gran Canaria", "Monterrey", "León", "Managua", "San José", "Bogota", "Quito", "Lima",
+        "Trujillo", "Rio de Janeiro", "São Paulo", "Montevideo", "Punta Arenas", "Îles Falkland (Malvinas)", "Santiago",
+        "Paramaribo", "Dar es Salam", "Arusha", "Zanzibar", "Luanda", "Freetown", "Niamey", "Djouba", "Khartoum",
+        "Singapour", "Jakarta", "Surabaya", "Yogyakarta", "Banyuwangi", "Denpasar", "Ruteng", "Labuan Bajoen", "Sydney",
+        "Melbourne", "Adélaïde", "Perth", "Darwin", "Nouméa", "Port Moresby", "Port-Vila", "Papeete", "Bora-Bora",
+        "Honolulu", "Anchorage", "Reykjavik", "Longyearbyen", "Oslo", "Stockholm", "Helsinki", "Rovaniemi", "La Havane",
+        "Nassau", "Miami", "Dallas", "Washington", "Atlanta", "Las Vegas", "Los Angeles", "San Francisco", "Sacramento",
+        "Seattle", "Vancouver", "Portland", "Winnipeg", "Calgary", "Edmonton", "Ottawa", "Montréal", "Québec",
+        "Toronto", "Kansas City", "Dublin", "Londres", "Manchester", "Liverpool", "Glasgow", "Édimbourg", "Aberdeen",
+        "Tórshavn", "Îles Féroé", "Bucarest", "Iaşi", "Cluj-Napoca", "Braşov", "Budapest", "Vienne", "Salzbourg",
+        "Prague", "Varsovie", "Tallinn", "Riga", "Hô Chi Minh-Ville", "Hanoï", "Phnom Penh", "Bangkok", "Manille",
+        "Naypyidaw", "Chittagong", "Dacca", "Katmandou", "Karachi", "Hyderâbâd"
+    ]
 
-    # récupération de la ville choisie par l'utilisateur
-    print("Entrez la ville dont vous voulez connaitre la meteo en indiquant son pays : Paris,fr Londres,uk...")
-    ville = raw_input("De quelle ville voulez vous connaitre la meteo ? ")
+    def get_weather(city):
+        weather_conditions = ["Ensoleillé", "Nuageux", "Pluie", "Brume", "Orages"]
+        return random.choice(weather_conditions)
 
-    # récupère le temps actuel
-    url_weather = "http://api.openweathermap.org/data/2.5/weather?q=" + ville + "&APPID=beb97c1ce62559bba4e81e28de8be095"
-    # url="http://api.openweathermap.org/data/2.5/weather?q=Londres,uk&APPID=beb97c1ce62559bba4e81e28de8be095"
+    def get_humidity():
+        return random.randint(0, 100)
 
-    r_weather = requests.get(url_weather)
-    data = r_weather.json()
-    # print(data)
+    def get_wind_speed():
+        return random.randint(0, 50)
 
-    print("Vous etes a " + ville)
+    def get_gust_speed():
+        return random.randint(0, 70)
 
-    # temperature moyenne
-    t = data['main']['temp']
-    print("La temperature moyenne est de {} degres Celsius".format(t - 273.15))
-    # écart de température
-    t_min = data['main']['temp_min']
-    t_max = data['main']['temp_max']
-    print("Les temperatures varient entre {}".format(t_min - 273.15) + " a {} degres Celsius".format(t_max - 273.15))
-    # taux d'humidité
-    humidite = data['main']['humidity']
-    print("Taux d'humidite de {}".format(humidite) + "%")
-    # état du ciel
-    temps = data['weather'][0]['description']
-    print("Conditions climatiques : {}".format(temps))
+    def display_weather(city):
+        weather = get_weather(city)
+        print(f"Les conditions météorologiques à {city} est: {weather}.")
 
-    # jour = raw_input("De quel jour voulez vous la météo ?")
-    # date = datetime.datetime(year=2017, month=5, day= jour)
-    ville = raw_input("De quelle ville voulez vous connaitre les previsions ? ")
-    url_forecast = "http://api.openweathermap.org/data/2.5/forecast?q=" + ville + "&APPID=beb97c1ce62559bba4e81e28de8be095"
-    r_forecast = requests.get(url_forecast)
-    data = r_forecast.json()
-    # print(data)
+    def display_humidity():
+        humidity = get_humidity()
+        print(f"L'humidité est de : {humidity}%.")
 
-    for i in range(0, 25):
-        t = data['list'][i]['main']['temp']
-        temps = data['list'][i]['weather'][0]['description']
-        time = data['list'][i]['dt_txt']
-        print("Previsions pour le {}".format(time))
-        print("La temperature moyenne est de {} degres Celsius".format(t - 273.15))
-        print("Conditions climatiques : {}".format(temps))
+    def display_wind_speed():
+        wind_speed = get_wind_speed()
+        print(f"La vitesse du vent est de : {wind_speed} km/h.")
 
-    # traduction possible d'anglais en français ? mes données sont en anglais et je les ressort en french
+    def display_gust_speed():
+        gust_speed = get_gust_speed()
+        print(f"La vitesse des rafales est de : {gust_speed} km/h.")
 
+    def display_city_menu():
+        print("Sélectionnez une ville :")
+        for i, city in enumerate(cities, start=1):
+            print(f"{i}. {city}")
+
+    def display_main_menu():
+        print("=== Menu Principal ===")
+        print("1. Précipitations")
+        print("2. Humidité")
+        print("3. Vent")
+        print("4. Rafale")
+        print("5. Ensoleillé")
+        print("6. Nuageux")
+        print("7. Pluie")
+        print("8. Brume")
+        print("9. Orages")
+        print("0. Quitter")
+
+    # Programme principal
+    while True:
+        display_main_menu()
+        choice = input("Sélectionnez une option : ")
+
+        if choice == "0":
+            print("Au revoir !")
+            break
+
+        if choice == "1":
+            display_city_menu()
+            city_choice = int(input("Sélectionnez une ville : "))
+            city = cities[city_choice - 1]
+            display_weather(city)
+
+        if choice == "2":
+            display_humidity()
+
+        if choice == "3":
+            display_wind_speed()
+
+        if choice == "4":
+            display_gust_speed()
+
+        if choice == "5":
+            display_city_menu()
+            city_choice = int(input("Sélectionnez une ville : "))
+            city = cities[city_choice - 1]
+            display_weather(city)
+
+        if choice == "6":
+            display_city_menu()
+            city_choice = int(input("Sélectionnez une ville : "))
+            city = cities[city_choice - 1]
+            display_weather(city)
+
+        if choice == "7":
+            display_city_menu()
+            city_choice = int(input("Sélectionnez une ville : "))
+            city = cities[city_choice - 1]
+            display_weather(city)
+
+        if choice == "8":
+            display_city_menu()
+            city_choice = int(input("Sélectionnez une ville : "))
+            city = cities[city_choice - 1]
+            display_weather(city)
+
+        if choice == "9":
+            display_city_menu()
+            city_choice = int(input("Sélectionnez une ville : "))
+            city = cities[city_choice - 1]
+            display_weather(city)
+
+        input("Appuyez sur Entrée pour continuer...")
