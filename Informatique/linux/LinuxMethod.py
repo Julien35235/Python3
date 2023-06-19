@@ -50,8 +50,8 @@ def openfilleLinuxMethod():
         print("45. git stage")
         print("46. git add --all")
         print("47. git commit -m \"\"")
-        print("48. git pull (git p)")
-        print("49. git pull")
+        print("48. git pull")
+        print("49. git push (git p)")
         print("50. git remote -v")
         print("51. git branch")
         print("52. git reset")
@@ -177,7 +177,7 @@ def openfilleLinuxMethod():
         elif choice == "48":
             run_command("git pull")
         elif choice == "49":
-            run_command("git pull")
+            run_command("git push")
         elif choice == "50":
             run_command("git remote -v")
         elif choice == "51":
