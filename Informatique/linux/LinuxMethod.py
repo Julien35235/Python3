@@ -42,6 +42,20 @@ def openfilleLinuxMethod():
         print("37. mount")
         print("38. sudo rm")
         print("39. rm -R")
+        print("40. git config --global user.email sam@google.com")
+        print("41. git clone")
+        print("42. git init")
+        print("43. git status")
+        print("44. git restore")
+        print("45. git stage")
+        print("46. git add --all")
+        print("47. git commit -m \"\"")
+        print("48. git pull (git p)")
+        print("49. git pull")
+        print("50. git remote -v")
+        print("51. git branch")
+        print("52. git reset")
+        print("53. git diff")
         print("0. Quitter")
 
     def run_command(command):
@@ -143,5 +157,34 @@ def openfilleLinuxMethod():
             run_command("sudo rm")
         elif choice == "39":
             run_command("rm -R")
+        elif choice == "40":
+            run_command("git config --global user.email sam@google.com")
+        elif choice == "41":
+            run_command("git clone")
+        elif choice == "42":
+            run_command("git init")
+        elif choice == "43":
+            run_command("git status")
+        elif choice == "44":
+            run_command("git restore")
+        elif choice == "45":
+            run_command("git stage")
+        elif choice == "46":
+            run_command("git add --all")
+        elif choice == "47":
+            commit_message = input("Entrez le message du commit : ")
+            run_command(f"git commit -m \"{commit_message}\"")
+        elif choice == "48":
+            run_command("git pull")
+        elif choice == "49":
+            run_command("git pull")
+        elif choice == "50":
+            run_command("git remote -v")
+        elif choice == "51":
+            run_command("git branch")
+        elif choice == "52":
+            run_command("git reset")
+        elif choice == "53":
+            run_command("git diff")
         else:
             print("Commande invalide. Veuillez réessayer.")
