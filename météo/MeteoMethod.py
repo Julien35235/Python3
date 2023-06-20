@@ -2,7 +2,7 @@ def openfilleMeteoMethod():
     import random
 
     cities = [
-    "New-York", "Boston", "Dinard", "Rennes", "Châteaubourg", "Saint-Jacques-de-la-Lande", "Ploërmel",
+    "Dinard", "Rennes", "Châteaubourg", "Saint-Jacques-de-la-Lande", "Ploërmel",
     "Quimper", "Douarnenez", "Crozon", "Brest", "Lannion", "Guingamp", "Saint-Brieuc", "Saint-Malo",
     "Cancale", "Saint-Méloir-des-Ondes", "Combourg", "Mordelles", "Le Rheu", "Paris", "Châteauroux",
     "Le Plessis-Belleville", "Roissy-en-France", "Saint-Denis", "Nanterre", "La Défense", "Suresnes",
@@ -39,11 +39,11 @@ def openfilleMeteoMethod():
     "Port-Vila", "Papeete", "Bora-Bora", "Honolulu", "Anchorage", "Qamani'tuaq", "Reykjavik",
     "Longyearbyen", "Oslo", "Stockholm", "Helsinki", "Rovaniemi", "La Havane", "Nassau", "San Juan",
     "Saint-Domingue", "Port-au-Prince","Ponce", "Fort-de-France", "Pointe-à-Pitre", "Miami", "Dallas",
-    "Washington", "Atlanta", "Las Vegas", "Los Angeles", "San Francisco", "Sacramento", "Seattle", "Vancouver",
-    "Portland", "Winnipeg","Calgary", "Edmonton", "Ottawa", "Montréal", "Saint-Pierre-et-Miquelon",
-    "Saguenay", "Trois-Rivières","Québec", "Toronto", "Kansas City", "Dublin", "Londres", "Manchester", "Liverpool",
-    "Glasgow","Édimbourg", "Aberdeen", "Tórshavn", "Îles Féroé", "Bucarest", "Iaşi", "Cluj-Napoca", "Braşov",
-    "Budapest", "Vienne", "Salzbourg", "Prague", "Varsovie", "Tallinn", "Riga", "Hô Chi Minh-Ville",
+    "New-York", "Boston", "Washington", "Atlanta", "Las Vegas", "Los Angeles", "San Francisco",
+    "Sacramento", "Seattle", "Vancouver","Portland", "Winnipeg","Calgary", "Edmonton", "Ottawa", "Montréal",
+    "Saint-Pierre-et-Miquelon","Saguenay", "Trois-Rivières","Québec", "Toronto", "Kansas City", "Dublin", "Londres",
+    "Manchester", "Liverpool","Glasgow","Édimbourg", "Aberdeen", "Tórshavn", "Îles Féroé", "Bucarest", "Iaşi",
+    "Cluj-Napoca", "Braşov","Budapest", "Vienne", "Salzbourg", "Prague", "Varsovie", "Tallinn", "Riga", "Hô Chi Minh-Ville",
     "Hanoï", "Phnom Penh", "Bangkok", "Manille", "Cebu",  "Naypyidaw", "Chittagong", "Dacca", "Katmandou",
     "Karachi", "Hyderâbâd"
     ]
