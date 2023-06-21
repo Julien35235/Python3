@@ -1,0 +1,2 @@
+import ChatGPTMethod
+ChatGPTMethod.openfilleChatGPTMethod()
