@@ -1,8 +1,19 @@
+import getpass
 import subprocess
+
+def login():
+    username = input("Entrez votre nom d'utilisateur: ")
+    password = getpass.getpass("Entrez votre mot de passe: ")
+
+    # Vérifiez les informations d'identification
+    if username == "admin" and password == "admin@35235!!":
+        return True
+    else:
+        print("Identifiants incorrects.")
+        return False
 
 def run_command(command):
     subprocess.call(command, shell=True)
-
 
 def display_menu():
     print("Menu Ligne de commande Linux avec Man :")
@@ -62,131 +73,132 @@ def display_menu():
     print("54. man git diff --staged")
     print("55. man diff --git a")
 
-
 def main():
-    display_menu()
-    choice = input("Veuillez sélectionner une option (1-55): ")
+    if login():
+        display_menu()
+        choice = input("Veuillez sélectionner une option (1-55): ")
 
-    command = ""
-    if choice.isdigit():
-        choice = int(choice)
-        if 1 <= choice <= 55:
-            if choice == 1:
-                command = "man brew"
-            elif choice == 2:
-                command = "man brew upgrade"
-            elif choice == 3:
-                command = "man sudo halt"
-            elif choice == 4:
-                command = "man sudo reboot"
-            elif choice == 5:
-                command = "man sudo shutdown -s now"
-            elif choice == 6:
-                command = "man ps"
-            elif choice == 7:
-                command = "man ps x"
-            elif choice == 8:
-                command = "man ps aux"
-            elif choice == 9:
-                command = "man ps ax"
-            elif choice == 10:
-                command = "man top"
-            elif choice == 11:
-                command = "man kill"
-            elif choice == 12:
-                command = "man killall"
-            elif choice == 13:
-                command = "man history"
-            elif choice == 14:
-                command = "man pwd"
-            elif choice == 15:
-                command = "man mkdir"
-            elif choice == 16:
-                command = "man touch"
-            elif choice == 17:
-                command = "man mv"
-            elif choice == 18:
-                command = "man cat"
-            elif choice == 19:
-                command = "man cd"
-            elif choice == 20:
-                command = "man cp"
-            elif choice == 21:
-                command = "man chmod"
-            elif choice == 22:
-                command = "man vi"
-            elif choice == 23:
-                command = "man nano"
-            elif choice == 24:
-                command = "man echo"
-            elif choice == 25:
-                command = "man host"
-            elif choice == 26:
-                command = "man dmesg | grep -i network"
-            elif choice == 27:
-                command = "man less"
-            elif choice == 28:
-                command = "man ls"
-            elif choice == 29:
-                command = "man ls -all"
-            elif choice == 30:
-                command = "man ls -a"
-            elif choice == 31:
-                command = "man ls -lash"
-            elif choice == 32:
-                command = "man ls -lh"
-            elif choice == 33:
-                command = "man"
-            elif choice == 34:
-                command = "man mount"
-            elif choice == 35:
-                command = "man git"
-            elif choice == 36:
-                command = "man git config --list"
-            elif choice == 37:
-                command = "man git config user.name"
-            elif choice == 38:
-                command = "man git config --show-origin rerere.autoUpdate"
-            elif choice == 39:
-                command = "man git help"
-            elif choice == 40:
-                command = "man git help config"
-            elif choice == 41:
-                command = "man git clone"
-            elif choice == 42:
-                command = "man git init"
-            elif choice == 43:
-                command = "man git status"
-            elif choice == 44:
-                command = "man git restore"
-            elif choice == 45:
-                command = "man git stage"
-            elif choice == 46:
-                command = "man git add --all"
-            elif choice == 47:
-                command = 'man git commit -m ""'
-            elif choice == 48:
-                command = "man git pull"
-            elif choice == 49:
-                command = "man git push (git p)"
-            elif choice == 50:
-                command = "man git remote -v"
-            elif choice == 51:
-                command = "man git branch"
-            elif choice == 52:
-                command = "man git reset"
-            elif choice == 53:
-                command = "man git diff"
-            elif choice == 54:
-                command = "man git diff --staged"
-            elif choice == 55:
-                command = "man diff --git a"
+        command = ""
+        if choice.isdigit():
+            choice = int(choice)
+            if 1 <= choice <= 55:
+                if choice == 1:
+                    command = "man brew"
+                elif choice == 2:
+                    command = "man brew upgrade"
+                elif choice == 3:
+                    command = "man sudo halt"
+                elif choice == 4:
+                    command = "man sudo reboot"
+                elif choice == 5:
+                    command = "man sudo shutdown -s now"
+                elif choice == 6:
+                    command = "man ps"
+                elif choice == 7:
+                    command = "man ps x"
+                elif choice == 8:
+                    command = "man ps aux"
+                elif choice == 9:
+                    command = "man ps ax"
+                elif choice == 10:
+                    command = "man top"
+                elif choice == 11:
+                    command = "man kill"
+                elif choice == 12:
+                    command = "man killall"
+                elif choice == 13:
+                    command = "man history"
+                elif choice == 14:
+                    command = "man pwd"
+                elif choice == 15:
+                    command = "man mkdir"
+                elif choice == 16:
+                    command = "man touch"
+                elif choice == 17:
+                    command = "man mv"
+                elif choice == 18:
+                    command = "man cat"
+                elif choice == 19:
+                    command = "man cd"
+                elif choice == 20:
+                    command = "man cp"
+                elif choice == 21:
+                    command = "man chmod"
+                elif choice == 22:
+                    command = "man vi"
+                elif choice == 23:
+                    command = "man nano"
+                elif choice == 24:
+                    command = "man echo"
+                elif choice == 25:
+                    command = "man host"
+                elif choice == 26:
+                    command = "man dmesg | grep -i network"
+                elif choice == 27:
+                    command = "man less"
+                elif choice == 28:
+                    command = "man ls"
+                elif choice == 29:
+                    command = "man ls -all"
+                elif choice == 30:
+                    command = "man ls -a"
+                elif choice == 31:
+                    command = "man ls -lash"
+                elif choice == 32:
+                    command = "man ls -lh"
+                elif choice == 33:
+                    command = "man"
+                elif choice == 34:
+                    command = "man mount"
+                elif choice == 35:
+                    command = "man git"
+                elif choice == 36:
+                    command = "man git config --list"
+                elif choice == 37:
+                    command = "man git config user.name"
+                elif choice == 38:
+                    command = "man git config --show-origin rerere.autoUpdate"
+                elif choice == 39:
+                    command = "man git help"
+                elif choice == 40:
+                    command = "man git help config"
+                elif choice == 41:
+                    command = "man git clone"
+                elif choice == 42:
+                    command = "man git init"
+                elif choice == 43:
+                    command = "man git status"
+                elif choice == 44:
+                    command = "man git restore"
+                elif choice == 45:
+                    command = "man git stage"
+                elif choice == 46:
+                    command = "man git add --all"
+                elif choice == 47:
+                    command = 'man git commit -m ""'
+                elif choice == 48:
+                    command = "man git pull"
+                elif choice == 49:
+                    command = "man git push (git p)"
+                elif choice == 50:
+                    command = "man git remote -v"
+                elif choice == 51:
+                    command = "man git branch"
+                elif choice == 52:
+                    command = "man git reset"
+                elif choice == 53:
+                    command = "man git diff"
+                elif choice == 54:
+                    command = "man git diff --staged"
+                elif choice == 55:
+                    command = "man diff --git a"
 
-    if command:
-        run_command(command)
+        if command:
+            run_command(command)
+        else:
+            print("Choix invalide.")
     else:
-        print("Choix invalide.")
-
+        print("Connexion échouée.")
 
 if __name__ == "__main__":
     main()

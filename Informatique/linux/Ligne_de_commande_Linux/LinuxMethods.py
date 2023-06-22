@@ -1,6 +1,18 @@
-def openfilleLinuxMethods():
-    import subprocess
+import getpass
+import subprocess
 
+def login(username_param, password_param):
+    username = input("Entrez votre nom d'utilisateur: ")
+    password = getpass.getpass("Entrez votre mot de passe: ")
+
+    # Vérifiez les informations d'identification
+    if username == username_param and password == password_param:
+        return True
+    else:
+        print("Identifiants incorrects.")
+        return False
+
+def openfilleLinuxMethods():
     def run_command(command):
         try:
             output = subprocess.check_output(command, shell=True)
@@ -133,3 +145,8 @@ def openfilleLinuxMethods():
         print()  # Ligne vide pour une meilleure lisibilité
 
     print("Au revoir !")
+
+username_param = "admin"
+password_param = "admin@35235!!"
+if login(username_param, password_param):
+    openfilleLinuxMethods()

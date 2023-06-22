@@ -2,7 +2,7 @@ def openfilleChatGPTMethod():
     import openai
 
     # Configuration de l'API OpenAI
-    openai.api_key = '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'  # Remplacez par votre clé d'API OpenAI
+    openai.api_key = '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'  # Remplacez par votre clé d'API OpenAI
 
     def chat_with_gpt(prompt):
         response = openai.Completion.create(

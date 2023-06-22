@@ -1,0 +1,2 @@
+import AntivirusMethod
+AntivirusMethod.openfilleAntivirusMethod()
