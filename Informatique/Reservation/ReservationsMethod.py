@@ -91,6 +91,7 @@ def openfilleReservationsMethod():
 
         reservation = HotelReservation(nom_hotel, date_arrivee, date_depart, nb_chambres)
         reservation.afficher_details()
+        effectuer_paiement()
 
     # Fonction pour effectuer une réservation de train
     def effectuer_reservation_train():
@@ -113,6 +114,7 @@ def openfilleReservationsMethod():
         reservation = TrainReservation(compagnie_train, numero_train, gare_depart, gare_arrivee, date_depart,
                                        date_arrivee, nb_passagers, numero_voie)
         reservation.afficher_details()
+        effectuer_paiement()
 
     # Fonction pour effectuer une réservation d'avion
     def effectuer_reservation_avion():
@@ -130,6 +132,7 @@ def openfilleReservationsMethod():
 
         reservation = FlightReservation(compagnie_aerienne, numero_vol, date_depart, date_arrivee, nb_passagers)
         reservation.afficher_details()
+        effectuer_paiement()
 
     # Fonction pour effectuer une réservation de cinéma
     def effectuer_reservation_cinema():
@@ -147,6 +150,13 @@ def openfilleReservationsMethod():
 
         reservation = CinemaReservation(nom_cinema, film, date, heure, nb_tickets)
         reservation.afficher_details()
+        effectuer_paiement()
+
+    # Fonction pour effectuer un paiement
+    def effectuer_paiement():
+        montant = float(input("Entrez le montant à payer : "))
+        # Ajoutez ici la logique de paiement appropriée
+        print("Paiement effectué. Merci !")
 
     # Fonction pour le menu principal
     def menu_principal():
