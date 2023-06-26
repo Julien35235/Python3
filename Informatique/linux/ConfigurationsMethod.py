@@ -103,6 +103,12 @@ def openfilleConfigurationsMethod():
         print("Configuration complète pour Ubuntu")
         webbrowser.open("https://www.ubuntu-fr.org/download")
 
+    def configure_ubuntu_server():
+        # Configuration complète pour Ubuntu Server
+        clear_screen()
+        print("Configuration complète pour Ubuntu Server")
+        webbrowser.open("https://lecrabeinfo.net/telecharger/ubuntu-server-20-04-lts ")
+
     def configure_debian():
         # Configuration complète pour Debian
         clear_screen()
@@ -153,11 +159,12 @@ def openfilleConfigurationsMethod():
         print("14. OPNsense")
         print("15. iPXE")
         print("16. Ubuntu")
-        print("17. Debian")
-        print("18. Fedora")
-        print("19. Raspberry Pi")
-        print("20. Arduino")
-        print("21. Kali")
+        print("17. Ubuntu Server")
+        print("18. Debian")
+        print("19. Fedora")
+        print("20. Raspberry Pi")
+        print("21. Arduino")
+        print("22. Kali")
         print("0. Quitter")
 
         choice = input("Choisissez une option : ")
@@ -195,14 +202,16 @@ def openfilleConfigurationsMethod():
         elif choice == "16":
             configure_ubuntu()
         elif choice == "17":
-            configure_debian()
+            configure_ubuntu_server()
         elif choice == "18":
-            configure_fedora()
+            configure_debian()
         elif choice == "19":
-            configure_raspberry_pi()
+            configure_fedora()
         elif choice == "20":
-            configure_arduino()
+            configure_raspberry_pi()
         elif choice == "21":
+            configure_arduino()
+        elif choice == "22":
             configure_kali()
         elif choice == "0":
             clear_screen()
