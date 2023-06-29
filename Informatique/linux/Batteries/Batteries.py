@@ -1,0 +1,2 @@
+import BatteriesMethod
+BatteriesMethod.openfilleBatteriesMethod()
