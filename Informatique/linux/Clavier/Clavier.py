@@ -1,0 +1,2 @@
+import ClavierMethod
+ClavierMethod.openfilleClavierMethod()

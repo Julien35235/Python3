@@ -32,7 +32,8 @@ def openfilleMenuMethod():
         print("5. Vous allez où ?")
         print("6. Vous habitez dans les environs ?")
         print("7. Êtes-vous recherché ?")
-        print("8. Retour au menu principal")
+        print("8. Vérifier le casier judiciaire")
+        print("9. Retour au menu principal")
 
     # Fonction pour afficher le menu Ultimate Backup
     def afficher_menu_ultimate_backup():
@@ -66,7 +67,7 @@ def openfilleMenuMethod():
         print("2. Véhicule de secours et d’assistance aux victimes (VSAV)")
         print("3. Véhicule secours routier (VSR)")
         print("4. Grande échelle, ou échelle pivotante automatique (EPA)")
-        print("5. Bras (Mât) Elévateur Articulé (BEA (MEA)")
+        print("5. Bras (Mât) Elévateur Articulé (BEA (MEA))")
         print("6. Fourgon pompe-tonne (FPT)")
         print("7. Camion-citerne feux de forêts (CCF)")
         print("8. Véhicule poste de commandement (VPC)")
@@ -90,6 +91,35 @@ def openfilleMenuMethod():
         print("26. Smur")
         print("27. Retour au menu principal")
 
+    # Fonction pour vérifier le casier judiciaire
+    def verifier_casier_judiciaire():
+        nom_personne = input("Entrez le nom de la personne : ")
+        if nom_personne == "John Doe":
+            print("La personne a un casier judiciaire.")
+        else:
+            print("La personne n'a pas de casier judiciaire.")
+
+    # Fonction pour vérifier les documents du véhicule
+    def verifier_documents_vehicule():
+        permis_conduire = input("Le permis de conduire est-il en règle ? (Oui/Non) ")
+        certificat_assurance = input("Le certificat d'assurance est-il en règle ? (Oui/Non) ")
+        carte_grise = input("Le certificat d'immatriculation est-il en règle ? (Oui/Non) ")
+        controle_technique = input("Le contrôle technique est-il en règle ? (Oui/Non) ")
+        carnet_entretien = input("Le carnet d'entretien est-il présent ? (Oui/Non) ")
+        disque_stationnement = input("Le disque de stationnement est-il présent ? (Oui/Non) ")
+
+        if (
+                permis_conduire == "Oui"
+                and certificat_assurance == "Oui"
+                and carte_grise == "Oui"
+                and controle_technique == "Oui"
+                and carnet_entretien == "Oui"
+                and disque_stationnement == "Oui"
+        ):
+            print("Le véhicule est en règle avec tous ses documents.")
+        else:
+            print("Le véhicule n'est pas en règle avec tous ses documents.")
+
     # Boucle principale du programme
     while True:
         afficher_menu_principal()
@@ -102,11 +132,9 @@ def openfilleMenuMethod():
 
                 # Effectuer les actions en fonction du choix
                 if choix_stop_the_ped == "1":
-                    nom_personne = input("Entrez le nom de la personne : ")
-                    print("Action Request Ped Check pour", nom_personne)
+                    verifier_casier_judiciaire()
                 elif choix_stop_the_ped == "2":
-                    plaque_immatriculation = input("Entrez la plaque d'immatriculation : ")
-                    print("Action Request Vehicle Check pour la plaque", plaque_immatriculation)
+                    verifier_documents_vehicule()
                 elif choix_stop_the_ped == "3":
                     print("Action Search The Vehicle")
                 elif choix_stop_the_ped == "4":
@@ -157,15 +185,7 @@ def openfilleMenuMethod():
                 choix_ultimate_backup = input("Sélectionnez une option : ")
 
                 # Effectuer les actions en fonction du choix
-                if choix_ultimate_backup == "1":
-                    print("Action Appeler du renfort Patrol Unité")
-                elif choix_ultimate_backup == "2":
-                    print("Action Appeler la Police nationale (PN)")
-                elif choix_ultimate_backup == "3":
-                    print("Action Appeler la Police municipale (PM)")
-                elif choix_ultimate_backup == "27":
-                    print("Action Appeler les Sapeurs-Pompiers")
-                elif choix_ultimate_backup == "28":
+                if choix_ultimate_backup == "21":
                     break  # Retourner au menu principal
                 else:
                     print("Option invalide")
@@ -176,26 +196,13 @@ def openfilleMenuMethod():
                 choix_sapeurs_pompiers = input("Sélectionnez une option : ")
 
                 # Effectuer les actions en fonction du choix
-                if choix_sapeurs_pompiers == "1":
-                    print("Action Appeler une ambulance (EMS)")
-                elif choix_sapeurs_pompiers == "2":
-                    print("Action Appeler un Véhicule de secours et d’assistance aux victimes (VSAV)")
-                elif choix_sapeurs_pompiers == "3":
-                    print("Action Appeler un Véhicule secours routier (VSR)")
-                elif choix_sapeurs_pompiers == "4":
-                    print("Action Appeler une grande échelle, ou échelle pivotante automatique (EPA)")
-                elif choix_sapeurs_pompiers == "5":
-                    print("Action Appeler un Bras (Mât) Elévateur Articulé (BEA (MEA))")
-                elif choix_sapeurs_pompiers == "26":
-                    print("Action Appeler les Smur")
-                elif choix_sapeurs_pompiers == "27":
+                if choix_sapeurs_pompiers == "27":
                     break  # Retourner au menu principal
                 else:
                     print("Option invalide")
 
         elif choix_principal == "5":
-            print("Programme terminé.")
+            print("Au revoir !")
             break  # Quitter le programme
-
         else:
             print("Option invalide")
