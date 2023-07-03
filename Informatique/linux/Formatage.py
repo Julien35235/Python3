@@ -1,0 +1,2 @@
+import FormatageMethod
+FormatageMethod.openfilleFormatageMethod()

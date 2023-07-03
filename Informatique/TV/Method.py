@@ -1,5 +1,5 @@
 def openfilleMethod():
-    chaines_tv = [
+    chaines = [
         "TF1",
         "France 2",
         "France 3",
@@ -64,7 +64,20 @@ def openfilleMethod():
         "RMC Sports"
     ]
 
-    for chaine in chaines_tv:
-        print(chaine)
-        if chaine == "RMC Sports":
-            break
+    def choisir_chaine():
+        print("Voici les chaînes de télévision disponibles :")
+        for i, chaine in enumerate(chaines):
+            print(f"{i + 1}. {chaine}")
+
+        while True:
+            try:
+                choix = int(input("Entrez le numéro de la chaîne que vous souhaitez regarder : "))
+                if choix < 1 or choix > len(chaines):
+                    print("Veuillez entrer un numéro valide.")
+                else:
+                    return chaines[choix - 1]
+            except ValueError:
+                print("Veuillez entrer un numéro valide.")
+
+    chaine_selectionnee = choisir_chaine()
+    print(f"Vous regardez la chaîne : {chaine_selectionnee}")
