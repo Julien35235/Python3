@@ -17,13 +17,16 @@ def afficher_menu():
 
 def effectuer_paiement():
     global solde, nombre_paiements
-    # La fonction global a été utiliser à l'éxtérieur d'une fonction
+    # La fonction global a été utiliser à l'extérieur d'une fonction
     montant = float(input("Entrez le montant du paiement: "))
     if solde >= montant:
         solde -= montant
-        destinataire = input("Entrez le nom du destinataire: ")
+        # Demander les détails de paiement
+        card_number = input("Numéro de carte : ")
+        expiration_date = input("Date d'expiration (MM/AA) : ")
+        cvv = input("Code de sécurité (CVV) : ")
         nombre_paiements += 1
-        print("Paiement de", montant, "à", destinataire, "effectué avec succès!")
+        print(f"Paiement de {montant}$ effectué avec succès!")
     else:
         print("Solde insuffisant pour effectuer le paiement.")
 
@@ -32,9 +35,12 @@ def effectuer_virement():
     montant = float(input("Entrez le montant du virement: "))
     if solde >= montant:
         solde -= montant
-        destinataire = input("Entrez le nom du bénéficiaire: ")
+        # Demander les détails de paiement
+        card_number = input("Numéro de carte : ")
+        expiration_date = input("Date d'expiration (MM/AA) : ")
+        cvv = input("Code de sécurité (CVV) : ")
         nombre_paiements += 1
-        print("Virement de", montant, "à", destinataire, "effectué avec succès!")
+        print(f"Virement de {montant}$ effectué avec succès!")
     else:
         print("Solde insuffisant pour effectuer le virement.")
 
@@ -50,7 +56,7 @@ def voir_solde():
 
 def voir_nombre_paiements():
     global nombre_paiements
-#La fonction global a été utiliser à l'éxtérieur d'une fonction
+    # La fonction global a été utiliser à l'extérieur d'une fonction
     print("Nombre de paiements effectués:", nombre_paiements)
 
 def calculer_montant_paiement_mensuel():
@@ -79,8 +85,12 @@ def effectuer_achat_en_ligne():
     montant = float(input("Entrez le montant de l'achat en ligne: "))
     if solde >= montant:
         solde -= montant
+        # Demander les détails de paiement
+        card_number = input("Numéro de carte : ")
+        expiration_date = input("Date d'expiration (MM/AA) : ")
+        cvv = input("Code de sécurité (CVV) : ")
         nombre_achats += 1
-        print("Achat en ligne de", montant, "effectué avec succès!")
+        print(f"Achat en ligne de {montant}$ effectué avec succès!")
     else:
         print("Solde insuffisant pour effectuer l'achat en ligne.")
 

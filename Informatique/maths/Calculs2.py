@@ -19,7 +19,7 @@ def division(a, b):
 
 def menu_principal():
     while True:
-        print("Menu Principal:")
+        print("Menu Principal des :")
         print("1. Addition")
         print("2. Soustraction")
         print("3. Multiplication")

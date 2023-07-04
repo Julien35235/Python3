@@ -51,7 +51,7 @@ def openfilleDocumentsMethod():
             date_expiration = input("Date d'expiration du permis : ")
             afficher_permis_conduire(numero, nom, date_expiration)
         elif choix == "2":
-            numero_police = input("Numéro de police de l'assurance : ")
+            numero_police = input("Numéro de l'assurance : ")
             compagnie_assurance = input("Compagnie d'assurance : ")
             date_expiration = input("Date d'expiration de l'assurance : ")
             afficher_certificat_assurance(numero_police, compagnie_assurance, date_expiration)

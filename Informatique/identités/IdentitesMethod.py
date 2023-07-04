@@ -12,6 +12,7 @@ def openFileIdentitesMethod():
     date_expiration = ""
     signature = ""
     numero_document = ""
+    adresse_postale = ""
 
     # Demande des informations jusqu'à ce que l'âge soit un entier positif et la taille soit un nombre positif
     while age <= 0 or taille <= 0:
@@ -56,6 +57,9 @@ def openFileIdentitesMethod():
         # Demande du numéro du document
         numero_document = input("Entrez le numéro du document : ")
 
+        # Demande de l'adresse postale
+        adresse_postale = input("Entrez votre adresse postale : ")
+
     # Affichage des informations
     print("\nBonjour", prenom, nom + " !")
     print("Vous avez", age, "ans.")
@@ -67,7 +71,4 @@ def openFileIdentitesMethod():
     print("Votre document expire le", date_expiration + ".")
     print("Signature :", signature)
     print("Numéro du document :", numero_document)
-
-
-
-
+    print("Adresse postale :", adresse_postale)

@@ -1,9 +1,24 @@
 import getpass
 import subprocess
 
+def create_user(username, password):
+    command = f"sudo dscl . -create /Users/{username}\n"
+    command += f"sudo dscl . -create /Users/{username} UserShell /bin/bash\n"
+    command += f"sudo dscl . -create /Users/{username} RealName '{username}'\n"
+    command += f"sudo dscl . -create /Users/{username} UniqueID '1001'\n"
+    command += f"sudo dscl . -create /Users/{username} PrimaryGroupID 80\n"
+    command += f"sudo dscl . -create /Users/{username} NFSHomeDirectory /Users/{username}\n"
+    command += f"sudo dscl . -passwd /Users/{username} {password}\n"
+    command += f"sudo dscl . -append /Groups/admin GroupMembership {username}\n"
+    try:
+        subprocess.check_output(command, shell=True)
+        print(f"Utilisateur '{username}' créé avec succès.")
+    except subprocess.CalledProcessError as e:
+        print(f"Erreur lors de la création de l'utilisateur : {e}")
+
 def login(username_param, password_param):
-    username = input("Entrez votre nom d'utilisateur: ")
-    password = getpass.getpass("Entrez votre mot de passe: ")
+    username = input("Entrez votre nom d'utilisateur : ")
+    password = getpass.getpass("Entrez votre mot de passe : ")
 
     # Vérifiez les informations d'identification
     if username == username_param and password == password_param:
@@ -128,12 +143,19 @@ def openfilleLinuxMethods():
         print("49. git diff")
         print("50. git diff --staged")
         print("51. diff --git a")
+        print("52. Créer un nouvel utilisateur")
         print("0. Quitter")
 
         choice = input("Choisissez une option : ")
 
         if choice == "0":
             break
+
+        if choice == "52":
+            new_username = input("Entrez le nom d'utilisateur du nouvel utilisateur : ")
+            new_password = getpass.getpass("Entrez le mot de passe du nouvel utilisateur : ")
+            create_user(new_username, new_password)
+            continue
 
         if not choice.isdigit() or int(choice) < 1 or int(choice) > len(command_list):
             print("Option invalide. Veuillez sélectionner un nombre valide.")
