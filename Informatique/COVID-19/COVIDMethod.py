@@ -1,5 +1,14 @@
 def openfilleCOVIDMethod():
-    import pycountry
+    import geonamescache
+
+    def afficher_villes_monde():
+        gc = geonamescache.GeonamesCache()
+        villes = gc.get_cities()
+        print('Villes du monde :')
+        print('-----------------')
+        for ville in villes:
+            nom_ville = villes[ville]['name']
+            print(nom_ville)
 
     def afficher_statistiques_mondiales():
         total_cas_confirmes = 1234567
@@ -34,35 +43,38 @@ def openfilleCOVIDMethod():
 
     def verifier_symptomes():
         symptomes = ['fièvre', 'toux sèche', 'fatigue', 'courbatures', 'maux de gorge', 'maux de tête',
-                     'perte de goût ou d'
-                     'odorat', 'congestion nasale', 'difficultés respiratoires', 'nausées ou vomissements']
+                     'perte de goût ou d' 'odorat', 'congestion nasale', 'difficultés respiratoires',
+                     'nausées ou vomissements']
         print('Veuillez répondre par "oui" ou "non".')
 
         for symptome in symptomes:
             reponse = input(f"Avez-vous {symptome} ? ")
-        if reponse.lower() == "oui":
-            print("Il est recommandé de consulter un professionnel de la santé.")
-        return
+            if reponse.lower() == "oui":
+                print("Il est recommandé de consulter un professionnel de la santé.")
+                return
 
         print("Il ne semble pas y avoir de symptômes préoccupants.")
 
     # Menu principal
     while True:
         print('Menu principal :')
-        print('1. Afficher les statistiques mondiales')
-        print('2. Afficher les statistiques par pays')
-        print('3. Vérifier les symptômes')
-        print('4. Quitter')
+        print('1. Afficher les villes du monde')
+        print('2. Afficher les statistiques mondiales')
+        print('3. Afficher les statistiques par pays')
+        print('4. Vérifier les symptômes')
+        print('5. Quitter')
 
         choix = input("Entrez votre choix : ")
 
         if choix == '1':
-            afficher_statistiques_mondiales()
+            afficher_villes_monde()
         elif choix == '2':
-            afficher_statistiques_par_pays()
+            afficher_statistiques_mondiales()
         elif choix == '3':
-            verifier_symptomes()
+            afficher_statistiques_par_pays()
         elif choix == '4':
+            verifier_symptomes()
+        elif choix == '5':
             print("Au revoir !")
             break
         else:
