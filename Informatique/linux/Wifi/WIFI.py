@@ -1,4 +1,6 @@
+import subprocess
 import os
+import re
 from getpass import getpass
 
 def connect_to_wifi():
@@ -25,7 +27,38 @@ def connect_to_specific_network():
 
 def show_current_network():
     command = '/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -I'
-    os.system(command)
+    output = subprocess.check_output(command, shell=True).decode()
+    ssid_match = re.search(r'[^B]SSID:\s(.+)', output)
+    if ssid_match:
+        ssid = ssid_match.group(1)
+        ip_address_match = re.search(r'IP address:\s+(\d+\.\d+\.\d+\.\d+)', output)
+        if ip_address_match:
+            ip_address = ip_address_match.group(1)
+            print(f"Réseau Wi-Fi actuel : {ssid}")
+            print(f"Adresse IP : {ip_address}")
+        else:
+            print(f"Réseau Wi-Fi actuel : {ssid}")
+            print("Adresse IP non disponible")
+    else:
+        print("Aucun réseau Wi-Fi actuel détecté")
+
+def show_ip_addresses():
+    command = '/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -s'
+    networks = subprocess.check_output(command, shell=True).decode().splitlines()[1:]
+    for network in networks:
+        ssid, bssid, rssi, channel, ht, cc, security, *rest = network.split()
+        command = f'/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -I -z -B {bssid}'
+        output = subprocess.check_output(command, shell=True).decode()
+        ip_address_match = re.search(r'IP address:\s+(\d+\.\d+\.\d+\.\d+)', output)
+        if ip_address_match:
+            ip_address = ip_address_match.group(1)
+            print(f"Réseau Wi-Fi : {ssid}")
+            print(f"Adresse IP : {ip_address}")
+            print("-----------------------------")
+        else:
+            print(f"Réseau Wi-Fi : {ssid}")
+            print("Adresse IP non disponible")
+            print("-----------------------------")
 
 def exit_program():
     print("Programme terminé.")
@@ -39,9 +72,11 @@ def main_menu():
         print("3. Afficher les réseaux Wi-Fi disponibles")
         print("4. Se connecter à un réseau spécifique")
         print("5. Afficher le réseau Wi-Fi actuel")
-        print("6. Quitter")
+        print("6. Afficher les adresses IP pour chaque réseau Wi-Fi")
+        print("7. Afficher l'adresse IP du réseau Wi-Fi actuel")
+        print("8. Quitter")
 
-        choice = input("Choisissez une option (1-6) : ")
+        choice = input("Choisissez une option (1-8) : ")
         if choice == '1':
             connect_to_wifi()
         elif choice == '2':
@@ -53,6 +88,10 @@ def main_menu():
         elif choice == '5':
             show_current_network()
         elif choice == '6':
+            show_ip_addresses()
+        elif choice == '7':
+            show_current_network()
+        elif choice == '8':
             exit_program()
         else:
             print("Option invalide. Veuillez réessayer.")

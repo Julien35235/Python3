@@ -1,3 +1,5 @@
+import hashlib
+
 solde = 0  # Solde initial
 nombre_paiements = 0  # Nombre de paiements effectués
 nombre_achats = 0  # Nombre d'achats en ligne effectués
@@ -15,34 +17,50 @@ def afficher_menu():
     print("9. Voir le nombre d'achats en ligne")
     print("10. Quitter")
 
+
 def effectuer_paiement():
     global solde, nombre_paiements
-    # La fonction global a été utiliser à l'extérieur d'une fonction
-    montant = float(input("Entrez le montant du paiement: "))
-    if solde >= montant:
+montant = float(input("Entrez le montant du paiement: "))
+if solde >= montant:
+    # Demander les détails de paiement sécurisé
+    card_number = input("Numéro de carte : ")
+    expiration_date = input("Date d'expiration (MM/AA) : ")
+    cvv = input("Code de sécurité (CVV) : ")
+
+    # Vérification de la sécurité du paiement
+    secure_payment = hashlib.md5((card_number + expiration_date + cvv).encode()).hexdigest()
+
+    if secure_payment == "5c45e0a35f4c1c549b2e7914f3e6d6c2":
         solde -= montant
-        # Demander les détails de paiement
-        card_number = input("Numéro de carte : ")
-        expiration_date = input("Date d'expiration (MM/AA) : ")
-        cvv = input("Code de sécurité (CVV) : ")
         nombre_paiements += 1
         print(f"Paiement de {montant}$ effectué avec succès!")
     else:
-        print("Solde insuffisant pour effectuer le paiement.")
+        print("Paiement non autorisé. Veuillez réessayer.")
+else:
+    print("Solde insuffisant pour effectuer le paiement.")
+
 
 def effectuer_virement():
     global solde, nombre_paiements
     montant = float(input("Entrez le montant du virement: "))
     if solde >= montant:
-        solde -= montant
-        # Demander les détails de paiement
+        # Demander les détails de paiement sécurisé
         card_number = input("Numéro de carte : ")
         expiration_date = input("Date d'expiration (MM/AA) : ")
         cvv = input("Code de sécurité (CVV) : ")
-        nombre_paiements += 1
-        print(f"Virement de {montant}$ effectué avec succès!")
+
+        # Vérification de la sécurité du paiement
+        secure_payment = hashlib.md5((card_number + expiration_date + cvv).encode()).hexdigest()
+
+        if secure_payment == "5c45e0a35f4c1c549b2e7914f3e6d6c2":
+            solde -= montant
+            nombre_paiements += 1
+            print(f"Virement de {montant}$ effectué avec succès!")
+        else:
+            print("Virement non autorisé. Veuillez réessayer.")
     else:
         print("Solde insuffisant pour effectuer le virement.")
+
 
 def ajouter_argent():
     global solde
@@ -50,14 +68,15 @@ def ajouter_argent():
     solde += montant
     print("Montant ajouté avec succès. Solde actuel:", solde)
 
+
 def voir_solde():
     global solde
     print("Votre solde actuel est de:", solde)
 
+
 def voir_nombre_paiements():
     global nombre_paiements
-    # La fonction global a été utiliser à l'extérieur d'une fonction
-    print("Nombre de paiements effectués:", nombre_paiements)
+    print( "Nombre de paiements effectués:", nombre_paiements)
 
 def calculer_montant_paiement_mensuel():
     montant_pret = float(input("Entrez le montant du prêt: "))
@@ -68,6 +87,7 @@ def calculer_montant_paiement_mensuel():
     montant_paiement_mensuel = (montant_pret * taux_interet_mensuel) / (1 - (1 + taux_interet_mensuel) ** -nombre_mois)
 
     print("Le montant du paiement mensuel est de:", montant_paiement_mensuel)
+
 
 def calculer_impots_taxes():
     montant_paiement = float(input("Entrez le montant du paiement: "))
@@ -80,23 +100,33 @@ def calculer_impots_taxes():
     print("Taxes:", taxes)
     print("Montant total à payer:", total)
 
+
 def effectuer_achat_en_ligne():
     global solde, nombre_achats
     montant = float(input("Entrez le montant de l'achat en ligne: "))
     if solde >= montant:
-        solde -= montant
-        # Demander les détails de paiement
+        # Demander les détails de paiement sécurisé
         card_number = input("Numéro de carte : ")
         expiration_date = input("Date d'expiration (MM/AA) : ")
         cvv = input("Code de sécurité (CVV) : ")
-        nombre_achats += 1
-        print(f"Achat en ligne de {montant}$ effectué avec succès!")
+
+        # Vérification de la sécurité du paiement
+        secure_payment = hashlib.md5((card_number + expiration_date + cvv).encode()).hexdigest()
+
+        if secure_payment == "5c45e0a35f4c1c549b2e7914f3e6d6c2":
+            solde -= montant
+            nombre_achats += 1
+            print(f"Achat en ligne de {montant}$ effectué avec succès!")
+        else:
+            print("Paiement non autorisé. Veuillez réessayer.")
     else:
         print("Solde insuffisant pour effectuer l'achat en ligne.")
+
 
 def voir_nombre_achats_en_ligne():
     global nombre_achats
     print("Nombre d'achats en ligne effectués:", nombre_achats)
+
 
 # Boucle principale du programme
 while True:

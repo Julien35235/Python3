@@ -26,6 +26,11 @@ def openfilleFormatageMethod():
         time.sleep(3)
         print("Le disque dur a été formaté avec succès sur Windows 11!")
 
+    def format_windows_12():
+        print("Formatage du disque dur sur Windows 12 en cours...")
+        time.sleep(3)
+        print("Le disque dur a été formaté avec succès sur Windows 12!")
+
     def format_mac_osx():
         print("Formatage du disque dur sur Mac OSX en cours...")
         time.sleep(3)
@@ -90,17 +95,18 @@ def openfilleFormatageMethod():
             print("3. Formatage du disque dur sur Windows 8")
             print("4. Formatage du disque dur sur Windows 10")
             print("5. Formatage du disque dur sur Windows 11")
-            print("6. Formatage du disque dur sur Mac OSX")
-            print("7. Formatage du disque dur sur CentOS")
-            print("8. Formatage du disque dur sur Kubernetes")
-            print("9. Formatage du disque dur sur OPNsense")
-            print("10. Formatage du disque dur sur Ubuntu")
-            print("11. Formatage du disque dur sur Ubuntu Server")
-            print("12. Formatage du disque dur sur Debian")
-            print("13. Formatage du disque dur sur Fedora")
-            print("14. Formatage du disque dur sur Raspberry Pi")
-            print("15. Formatage du disque dur sur Kali")
-            print("16. Formatage du disque dur sur Arduino")
+            print("6. Formatage du disque dur sur Windows 12")
+            print("7. Formatage du disque dur sur Mac OSX")
+            print("8. Formatage du disque dur sur CentOS")
+            print("9. Formatage du disque dur sur Kubernetes")
+            print("10. Formatage du disque dur sur OPNsense")
+            print("11. Formatage du disque dur sur Ubuntu")
+            print("12. Formatage du disque dur sur Ubuntu Server")
+            print("13. Formatage du disque dur sur Debian")
+            print("14. Formatage du disque dur sur Fedora")
+            print("15. Formatage du disque dur sur Raspberry Pi")
+            print("16. Formatage du disque dur sur Kali")
+            print("17. Formatage du disque dur sur Arduino")
             print("0. Quitter")
 
             choix = input("Sélectionnez une option : ")
@@ -119,26 +125,28 @@ def openfilleFormatageMethod():
             elif choix == "5":
                 format_windows_11()
             elif choix == "6":
-                format_mac_osx()
+                format_windows_12()
             elif choix == "7":
-                format_centos()
+                format_mac_osx()
             elif choix == "8":
-                format_kubernetes()
+                format_centos()
             elif choix == "9":
-                format_opnsense()
+                format_kubernetes()
             elif choix == "10":
-                format_ubuntu()
+                format_opnsense()
             elif choix == "11":
-                format_ubuntu_server()
+                format_ubuntu()
             elif choix == "12":
-                format_debian()
+                format_ubuntu_server()
             elif choix == "13":
-                format_fedora()
+                format_debian()
             elif choix == "14":
-                format_raspberry_pi()
+                format_fedora()
             elif choix == "15":
-                format_kali()
+                format_raspberry_pi()
             elif choix == "16":
+                format_kali()
+            elif choix == "17":
                 format_arduino()
             else:
                 print("Option invalide. Veuillez sélectionner une option valide.")
