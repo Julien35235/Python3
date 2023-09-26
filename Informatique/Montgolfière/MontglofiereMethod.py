@@ -7,7 +7,8 @@ def openfilleMonglofiereMethod():
         "F-HCSO": 2680,
         "F-GSTO": 2550,
         "F-HGAB": 3000,
-        "F-GYFR": 3000
+        "F-GYFR": 3000,
+        "F-GIAP": 7000,
     }
 
     vehicules = {
@@ -16,7 +17,8 @@ def openfilleMonglofiereMethod():
         "Caravelle T5 Blanc": 3,
         "Caravelle T6": 4,
         "Transporter TE": 5,
-        "TOYOTA NOIR": 6
+        "TOYOTA NOIR": 7,
+        "Crafer" : 6,
     }
 
     panier = []
