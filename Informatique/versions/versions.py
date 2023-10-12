@@ -26,6 +26,8 @@ macos_versions = [
     "macOS Catalina (10.15)",
     "macOS Big Sur (11)",
     "macOS Monterey (12)"
+    "macOS Ventura (13)"
+    "macOS Senoma (14)"
 ]
 
 # Les versions de Windows

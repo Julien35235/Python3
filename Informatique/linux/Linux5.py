@@ -42,11 +42,30 @@ def effectuer_mise_a_jour(systeme):
 
 # Liste des systèmes d'exploitation
 systemes = ["Mac OS", "Windows XP", "Windows 7", "Windows 8", "Windows 10", "Windows 11",
-            "CentOS", "OPNsense", "Ubuntu", "Debian", "Fedora", "Raspberry Pi"]
+            "CentOS", "OPNsense", "openSUSE", "pfSense", "Ubuntu", "Debian", "Deepin", "Fedora", "Raspberry Pi",
+            "Synology", "Kali Linux", "Parrot OS", "TrueNAS", "Proxmox", "Oracle Linux",
+            "Oracle VM VirtualBox", "UTM Virtual Machine", "VMware", "VMware vSphere 8", "VMware ESXi 8"]
 
-# Itération sur chaque système d'exploitation
-for systeme in systemes:
-    print(f"Mise à jour du système {systeme}:")
-    effectuer_mise_a_jour(systeme)
+while True:
+    print("Menu de mise à jour des systèmes d'exploitation :")
+    for i, systeme in enumerate(systemes):
+        print(f"{i + 1}. Mise à jour de {systeme}")
+
+    print("0. Quitter")
+    choix = input("Veuillez entrer le numéro du système à mettre à jour (ou 0 pour quitter) : ")
+
+    if choix == "0":
+        print("Au revoir !")
+        break
+    elif choix.isdigit():
+        choix = int(choix)
+        if 1 <= choix <= len(systemes):
+            systeme = systemes[choix - 1]
+            print(f"Mise à jour du système {systeme}:")
+            effectuer_mise_a_jour(systeme)
+        else:
+            print("Choix invalide. Veuillez sélectionner un numéro valide.")
+    else:
+        print("Choix invalide. Veuillez entrer un numéro.")
+
     print()
-

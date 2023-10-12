@@ -115,7 +115,7 @@ versions_macos = {
     "Catalina": "10.15",
     "Big Sur": "11.0",
     "Monterey": "12.0",
-    "Ventura": "12.1",
+    "Ventura": "13.1",
 }
 # Versions de Raspberry Pi
 raspberry_pi_versions = {
